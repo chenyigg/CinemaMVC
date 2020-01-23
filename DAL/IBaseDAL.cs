@@ -55,6 +55,6 @@ namespace DAL
         /// 一次性保存更改
         /// </summary>
         /// <returns></returns>
-        bool SaveChanges();
+        int SaveChanges();
     }
 }

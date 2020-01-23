@@ -9,19 +9,19 @@ namespace BLL
     {
         private BaseDAL<T> dal = new BaseDAL<T>();
 
-        public bool Add(T entity)
+        public int Add(T entity)
         {
             dal.Add(entity);
             return dal.SaveChanges();
         }
 
-        public bool Delete(T entity)
+        public int Delete(T entity)
         {
             dal.Delete(entity);
             return dal.SaveChanges();
         }
 
-        public bool Update(T entity)
+        public int Update(T entity)
         {
             dal.Update(entity);
             return dal.SaveChanges();

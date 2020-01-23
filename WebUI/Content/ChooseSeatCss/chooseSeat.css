@@ -129,3 +129,31 @@
         width: 70%;
         height: 50px;
     }
+
+chooseSeat_section_body_left_buttom table {
+    border: 1px;
+}
+
+.seatCheckInfo {
+    color: red;
+    border: 1px solid gray;
+    font-size: 20px;
+}
+
+.sureChanceSeat {
+    border: 1px solid black;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    margin-left: 8%;
+    background: green;
+    color: white;
+    font-size: 20px;
+}
+
+    .sureChanceSeat:hover {
+        background: red;
+        color: white;
+    }

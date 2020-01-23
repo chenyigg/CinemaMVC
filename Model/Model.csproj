@@ -51,23 +51,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChipInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="CinemaInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="CommentInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="EFModel.Context.cs">
+    <Compile Include="EFEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EFModel.Context.tt</DependentUpon>
+      <DependentUpon>EFEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EFModel.cs">
+    <Compile Include="EFEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="EFModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -75,35 +75,35 @@
       <DependentUpon>EFModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MovieInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="MusicInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="NewsInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="OfficeInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderDetails.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="OrdersGoodsInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeatInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="UrlCountInnfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="UsersInfo.cs">
-      <DependentUpon>EFModel.tt</DependentUpon>
+      <DependentUpon>EFEntity.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -121,15 +121,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EFModel.Context.tt">
+    <Content Include="EFEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EFModel.edmx</DependentUpon>
-      <LastGenOutput>EFModel.Context.cs</LastGenOutput>
+      <LastGenOutput>EFEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EFModel.tt">
+    <Content Include="EFEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EFModel.edmx</DependentUpon>
-      <LastGenOutput>EFModel.cs</LastGenOutput>
+      <LastGenOutput>EFEntity.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

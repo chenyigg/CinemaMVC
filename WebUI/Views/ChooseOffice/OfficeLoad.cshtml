@@ -109,10 +109,10 @@
                     <li style="color: red;">&yen;<span style="font-size: 1.2em; font-weight: bold;" v-cloak>{{i.Money}}</span></li>
                     <li>
                         <div v-if="i.Language=='英语'">
-                            <a :href="'ChooseSeat.aspx?OfficeID='+i.OfficeID+'&Language='+'english'+'&ChipInfoID='+i.ChipInfoID+'&Money='+i.Money">选座购票</a>
+                            <a :href="'/ChooseSeat/SeatLoad?OfficeID='+i.OfficeID+'&Language='+'english'+'&ChipInfoID='+i.ChipInfoID+'&Money='+i.Money">选座购票</a>
                         </div>
                         <div v-else-if="i.Language=='国语'">
-                            <a :href="'ChooseSeat.aspx?OfficeID='+i.OfficeID+'&Language='+'chinese'+'&ChipInfoID='+i.ChipInfoID+'&Money='+i.Money">选座购票</a>
+                            <a :href="'/ChooseSeat/SeatLoad?OfficeID='+i.OfficeID+'&Language='+'chinese'+'&ChipInfoID='+i.ChipInfoID+'&Money='+i.Money">选座购票</a>
                         </div>
                     </li>
                 </ul>

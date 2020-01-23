@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CinemaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CinemaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChipInfo">
           <Key>
             <PropertyRef Name="ChipInfoID" />
@@ -87,21 +87,16 @@
           <Property Name="NullColTwo" Type="int" />
           <Property Name="OfficeCount" Type="int" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“Cinema.dbo.OrderDetails”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="OrderDetails">
           <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="SeatID" />
-            <PropertyRef Name="OrderDetailsPrice" />
-            <PropertyRef Name="StartTime" />
-            <PropertyRef Name="StopTime" />
+            <PropertyRef Name="PrimaryKey" />
           </Key>
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="SeatID" Type="int" Nullable="false" />
           <Property Name="OrderDetailsPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="StartTime" Type="datetime" Nullable="false" />
           <Property Name="StopTime" Type="datetime" Nullable="false" />
+          <Property Name="PrimaryKey" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderInfo">
           <Key>
@@ -365,18 +360,10 @@
           <EntitySet Name="MusicInfo" EntityType="Self.MusicInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OfficeInfo" EntityType="Self.OfficeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SeatInfo" EntityType="Self.SeatInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [OrderDetails].[OrderID] AS [OrderID], 
-    [OrderDetails].[SeatID] AS [SeatID], 
-    [OrderDetails].[OrderDetailsPrice] AS [OrderDetailsPrice], 
-    [OrderDetails].[StartTime] AS [StartTime], 
-    [OrderDetails].[StopTime] AS [StopTime]
-    FROM [dbo].[OrderDetails] AS [OrderDetails]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="OrdersGoodsInfo" EntityType="Self.OrdersGoodsInfo" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [OrdersGoodsInfo].[CinemaID] AS [CinemaID], 
@@ -452,7 +439,8 @@
             <End Role="UsersInfo1" EntitySet="UsersInfo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CinemaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -553,6 +541,19 @@
           <NavigationProperty Name="OrdersGoodsInfo" Relationship="Self.FK__OrdersGoo__Offic__5CD6CB2B" FromRole="OfficeInfo" ToRole="OrdersGoodsInfo" />
           <NavigationProperty Name="SeatInfo" Relationship="Self.FK__SeatInfo__Office__5DCAEF64" FromRole="OfficeInfo" ToRole="SeatInfo" />
         </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="PrimaryKey" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="SeatID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDetailsPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StopTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PrimaryKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="OrderInfo" Relationship="Self.FK__OrderDeta__Order__5535A963" FromRole="OrderDetails" ToRole="OrderInfo" />
+          <NavigationProperty Name="SeatInfo" Relationship="Self.FK__OrderDeta__SeatI__5629CD9C" FromRole="OrderDetails" ToRole="SeatInfo" />
+        </EntityType>
         <EntityType Name="OrderInfo">
           <Key>
             <PropertyRef Name="OrderID" />
@@ -604,22 +605,6 @@
           <NavigationProperty Name="OrderInfo" Relationship="Self.FK__OrderInfo__Users__7F2BE32F" FromRole="UsersInfo" ToRole="OrderInfo" />
           <NavigationProperty Name="UsersInfo1" Relationship="Self.FK_UsersInfo_UsersInfo" FromRole="UsersInfo" ToRole="UsersInfo1" />
           <NavigationProperty Name="UsersInfo2" Relationship="Self.FK_UsersInfo_UsersInfo" FromRole="UsersInfo1" ToRole="UsersInfo" />
-        </EntityType>
-        <EntityType Name="OrderDetails">
-          <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="SeatID" />
-            <PropertyRef Name="OrderDetailsPrice" />
-            <PropertyRef Name="StartTime" />
-            <PropertyRef Name="StopTime" />
-          </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
-          <Property Name="SeatID" Type="Int32" Nullable="false" />
-          <Property Name="OrderDetailsPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="StopTime" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="OrderInfo" Relationship="Self.FK__OrderDeta__Order__5535A963" FromRole="OrderDetails" ToRole="OrderInfo" />
-          <NavigationProperty Name="SeatInfo" Relationship="Self.FK__OrderDeta__SeatI__5629CD9C" FromRole="OrderDetails" ToRole="SeatInfo" />
         </EntityType>
         <EntityType Name="OrdersGoodsInfo">
           <Key>
@@ -787,18 +772,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderInfo__Users__7F2BE32F">
-          <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
-          <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="UsersInfo">
-              <PropertyRef Name="UsersID" />
-            </Principal>
-            <Dependent Role="OrderInfo">
-              <PropertyRef Name="UsersID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__OrderDeta__SeatI__5629CD9C">
           <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
@@ -808,6 +781,18 @@
             </Principal>
             <Dependent Role="OrderDetails">
               <PropertyRef Name="SeatID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderInfo__Users__7F2BE32F">
+          <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+          <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersInfo">
+              <PropertyRef Name="UsersID" />
+            </Principal>
+            <Dependent Role="OrderInfo">
+              <PropertyRef Name="UsersID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -831,10 +816,10 @@
           <EntitySet Name="MusicInfo" EntityType="Self.MusicInfo" />
           <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" />
           <EntitySet Name="OfficeInfo" EntityType="Self.OfficeInfo" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" />
           <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" />
           <EntitySet Name="SeatInfo" EntityType="Self.SeatInfo" />
           <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" />
-          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" />
           <EntitySet Name="OrdersGoodsInfo" EntityType="Self.OrdersGoodsInfo" />
           <EntitySet Name="UrlCountInnfo" EntityType="Self.UrlCountInnfo" />
           <AssociationSet Name="FK__Chip__CinemaID__3B40CD36" Association="Self.FK__Chip__CinemaID__3B40CD36">
@@ -885,13 +870,13 @@
             <End Role="OrderInfo" EntitySet="OrderInfo" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderInfo__Users__7F2BE32F" Association="Self.FK__OrderInfo__Users__7F2BE32F">
-            <End Role="UsersInfo" EntitySet="UsersInfo" />
-            <End Role="OrderInfo" EntitySet="OrderInfo" />
-          </AssociationSet>
           <AssociationSet Name="FK__OrderDeta__SeatI__5629CD9C" Association="Self.FK__OrderDeta__SeatI__5629CD9C">
             <End Role="SeatInfo" EntitySet="SeatInfo" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderInfo__Users__7F2BE32F" Association="Self.FK__OrderInfo__Users__7F2BE32F">
+            <End Role="UsersInfo" EntitySet="UsersInfo" />
+            <End Role="OrderInfo" EntitySet="OrderInfo" />
           </AssociationSet>
           <AssociationSet Name="FK_UsersInfo_UsersInfo" Association="Self.FK_UsersInfo_UsersInfo">
             <End Role="UsersInfo" EntitySet="UsersInfo" />
@@ -993,6 +978,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="CinemaModel.OrderDetails">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+                <ScalarProperty Name="OrderDetailsPrice" ColumnName="OrderDetailsPrice" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="StopTime" ColumnName="StopTime" />
+                <ScalarProperty Name="PrimaryKey" ColumnName="PrimaryKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="OrderInfo">
             <EntityTypeMapping TypeName="CinemaModel.OrderInfo">
               <MappingFragment StoreEntitySet="OrderInfo">
@@ -1034,17 +1031,6 @@
                 <ScalarProperty Name="UserMvp" ColumnName="UserMvp" />
                 <ScalarProperty Name="UserFace" ColumnName="UserFace" />
                 <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderDetails">
-            <EntityTypeMapping TypeName="CinemaModel.OrderDetails">
-              <MappingFragment StoreEntitySet="OrderDetails">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-                <ScalarProperty Name="SeatID" ColumnName="SeatID" />
-                <ScalarProperty Name="OrderDetailsPrice" ColumnName="OrderDetailsPrice" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="StopTime" ColumnName="StopTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

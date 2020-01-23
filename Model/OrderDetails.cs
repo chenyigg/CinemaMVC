@@ -19,6 +19,7 @@ namespace Model
         public decimal OrderDetailsPrice { get; set; }
         public System.DateTime StartTime { get; set; }
         public System.DateTime StopTime { get; set; }
+        public int PrimaryKey { get; set; }
     
         public virtual OrderInfo OrderInfo { get; set; }
         public virtual SeatInfo SeatInfo { get; set; }

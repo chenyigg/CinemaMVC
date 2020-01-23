@@ -347,6 +347,7 @@
     <Compile Include="Controllers\AllMovieController.cs" />
     <Compile Include="Controllers\ChooseCinemaController.cs" />
     <Compile Include="Controllers\ChooseOfficeController.cs" />
+    <Compile Include="Controllers\ChooseSeatController.cs" />
     <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -378,6 +379,7 @@
     <Content Include="Views\Cinema\AllCinema.cshtml" />
     <Content Include="Views\ChooseCinema\CinemaLoad.cshtml" />
     <Content Include="Views\ChooseOffice\OfficeLoad.cshtml" />
+    <Content Include="Views\ChooseSeat\SeatLoad.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

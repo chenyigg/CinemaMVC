@@ -98,8 +98,8 @@ namespace WebUI.Controllers
                 CommentTime = Convert.ToDateTime(Request["CommentTime"])
             };
 
-            bool i = new CommentInfoBLL().Add(cm);
-            if (!i)
+            int i = new CommentInfoBLL().Add(cm);
+            if (!(i > 0))
             {
                 string str = "\"state\":\"false\"";
                 return Json(str);

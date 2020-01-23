@@ -32,10 +32,10 @@ namespace Model
         public virtual DbSet<MusicInfo> MusicInfo { get; set; }
         public virtual DbSet<NewsInfo> NewsInfo { get; set; }
         public virtual DbSet<OfficeInfo> OfficeInfo { get; set; }
+        public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<OrderInfo> OrderInfo { get; set; }
         public virtual DbSet<SeatInfo> SeatInfo { get; set; }
         public virtual DbSet<UsersInfo> UsersInfo { get; set; }
-        public virtual DbSet<OrderDetails> OrderDetails { get; set; }
         public virtual DbSet<OrdersGoodsInfo> OrdersGoodsInfo { get; set; }
         public virtual DbSet<UrlCountInnfo> UrlCountInnfo { get; set; }
     }

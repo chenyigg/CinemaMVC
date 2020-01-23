@@ -49,9 +49,9 @@ namespace DAL
             }
         }
 
-        public bool SaveChanges()
+        public int SaveChanges()
         {
-            return ef.SaveChanges() > 0;
+            return ef.SaveChanges();
         }
     }
 }

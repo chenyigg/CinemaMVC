@@ -148,8 +148,8 @@ namespace WebUI.Controllers
         {
             try
             {
-                bool b = new UsersInfoBLL().Add(use);
-                if (b)
+                int b = new UsersInfoBLL().Add(use);
+                if (b > 0)
                 {
                     return Json(new { state = "ok" });
                 }

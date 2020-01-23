@@ -11,21 +11,21 @@ namespace BLL
         /// </summary>
         /// <param name="entity">需要打上标记的类</param>
         /// <returns></returns>
-        bool Add(T entity);
+        int Add(T entity);
 
         /// <summary>
         /// 删
         /// </summary>
         /// <param name="entity">需要打上标记的类</param>
         /// <returns></returns>
-        bool Delete(T entity);
+        int Delete(T entity);
 
         /// <summary>
         /// 改
         /// </summary>
         /// <param name="entity">需要打上标记的类</param>
         /// <returns></returns>
-        bool Update(T entity);
+        int Update(T entity);
 
         /// <summary>
         /// 查
