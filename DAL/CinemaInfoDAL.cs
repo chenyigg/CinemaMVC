@@ -1,7 +1,6 @@
 ﻿using Model;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -22,9 +21,14 @@ namespace DAL
             return Linq.ToList<CinemaInfo>();
         }
 
+        /// <summary>
+        /// 查询正在放映此电影的所有电影院
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public dynamic ChooseCinemaInfo(MovieInfo model)
         {
-            //--查询正在放映此电影的所有电影
+            //--查询正在放映此电影的所有电影院
             //--开场十五分钟前
 
             //使用原生Sql语句
@@ -35,7 +39,7 @@ namespace DAL
                         on mv.MovieName equals cp.MovieName
                         join ci in ef.CinemaInfo
                         on cp.CinemaID equals ci.CinemaID
-                        where mv.MovieID == model.MovieID && DbFunctions.DiffMinutes(cp.StartTime, DateTime.Now) > 15
+                        where mv.MovieID == model.MovieID && (DbFunctions.DiffMinutes(DateTime.Now, cp.StartTime) > 15)
                         select ci).Distinct();
 
             //下面这句设置成断点就可以看到上一句Linq生成的SQL语句

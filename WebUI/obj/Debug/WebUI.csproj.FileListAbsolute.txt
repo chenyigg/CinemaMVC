@@ -1,3 +1,4 @@
+E:\Asp.Net\CinemaMVC\WebUI\obj\Debug\WebUI.csprojAssemblyReference.cache
 E:\Asp.Net\CinemaMVC\WebUI\bin\WebUI.dll.config
 E:\Asp.Net\CinemaMVC\WebUI\bin\WebUI.dll
 E:\Asp.Net\CinemaMVC\WebUI\bin\WebUI.pdb
@@ -86,7 +87,6 @@ E:\Asp.Net\CinemaMVC\WebUI\bin\zh-Hans\System.Web.Webpages.Deployment.resources.
 E:\Asp.Net\CinemaMVC\WebUI\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 E:\Asp.Net\CinemaMVC\WebUI\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\Asp.Net\CinemaMVC\WebUI\bin\zh-Hans\System.Web.Mvc.resources.dll
-E:\Asp.Net\CinemaMVC\WebUI\obj\Debug\WebUI.csprojAssemblyReference.cache
 E:\Asp.Net\CinemaMVC\WebUI\obj\Debug\WebUI.csproj.CopyComplete
 E:\Asp.Net\CinemaMVC\WebUI\obj\Debug\WebUI.dll
 E:\Asp.Net\CinemaMVC\WebUI\obj\Debug\WebUI.pdb

@@ -1,0 +1,122 @@
+﻿@model Model.CinemaInfo
+@{
+    ViewBag.Title = "OfficeLoad";
+}
+
+<link rel="stylesheet" href="~/Content/ChooseOfficeCss/xuanting.css">
+<!-- Load jQuery -->
+<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+
+<!-- 必要样式 -->
+<link href="~/Content/ChooseOfficeCss/mislider.css" rel="stylesheet">
+<link href="~/Content/ChooseOfficeCss/mislider-skin-cameo.css" rel="stylesheet">
+
+<script src="~/Scripts/ChooseOfficeJs/cinema..js"></script>
+<script src="~/Scripts/vue.js"></script>
+
+<script type="text/javascript" src="~/Scripts/ChooseOfficeJs/mislider.js"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        var slider = $('.mis-stage').miSlider({
+            stageHeight: 380,
+            slidesOnStage: false,
+            slidePosition: 'center',
+            slideStart: 'top',
+            slideScaling: 150,
+            offsetV: -5,
+            centerV: true,
+            navButtonsOpacity: 1
+        });
+    });
+</script>
+
+<section id="content" class="row">
+    <div class="content--top row">
+        <div class="content--top__content row">
+            <dl class="content--top__content--dl">
+                <dt>
+                    <img src="../images/CinemaCover/@Model.CinemaImg" alt="@Model.CinemaName %>">
+                </dt>
+                <dd style="font-size: 2em;">
+                    @Model.CinemaName
+                </dd>
+                <dd>
+                    @Model.CinemaAddress
+                </dd>
+                <dd>
+                    区域：
+                    @Model.CinemaArea
+                </dd>
+                <dd style="padding-top: 40px;">影院服务</dd>
+                <dd>
+                    <hr>
+                </dd>
+                <dd><span>儿童优惠</span>&nbsp;&nbsp;1.3米以下2D3D免费，需有一名承认带领</dd>
+                <dd><span>可停车</span>&nbsp;&nbsp;免费停车两小时</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="content--lunbo row">
+        <div class="mis-stage">
+            <ol class="mis-slider">
+                @foreach (Model.MovieInfo item in ViewBag.MovieInfo)
+                {
+                    <li class="mis-slide">
+                        <a href="javascript:0" class="mis-container">
+                            <figure>
+                                <img src="../images/MovieCover/@item.MovieCover" title="@item.MovieName" alt="@item.MovieID" v-on:click='SelectMovieInfo($event)'>
+                            </figure>
+                        </a>
+                    </li>
+                }
+            </ol>
+        </div>
+    </div>
+    <div class="content--bottom row">
+        <div class="content--bottom__top">
+            <dl class="content--bottom__top--dl">
+                <dd id="mn" v-cloak>{{MovieName}}</dd>
+                <span style="color: orange; font-size: 1.5em; padding-left: 20px;" v-cloak>{{MovieScore}}</span>分
+                <dd class="content--bottom__top--dl__dd2" v-cloak>
+                    时长:<span>{{MovieDuration}}分钟</span>&nbsp;&nbsp;&nbsp; 类型:
+                    <span v-cloak>{{MovieType}}</span>&nbsp;&nbsp;&nbsp; 主演:
+                    <span v-cloak>{{MoviePeople}}</span>&nbsp;&nbsp;&nbsp;
+                </dd>
+                <dd>
+                    <hr>
+                </dd>
+                <dd style="padding-bottom: 10px;" class="content--bottom__top--dl__dd4">
+                    观影时间：<span v-on:click="Tod" class="content--bottom__top--dl__dd4-span">今天{{Month}}月{{Day}}日</span><span v-on:click="Tom">明天{{(K2?Month+1:Month)>12?1:(K2?Month+1:Month)}}月{{K2?1:Day+1}}日</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="content--bottom__bottom row" v-for="i in ListShowDetails">
+            <div class="content--bottom__bottom--div col-12">
+                <ul class="content--bottom__bottom--ul" style="padding: 10px 0px;">
+                    <li>放映时间</li>
+                    <li>语言版本</li>
+                    <li>放映厅</li>
+                    <li>售价(元)</li>
+                    <li>选座购票</li>
+                </ul>
+                <ul class="content--bottom__bottom--ul ul-item" style="padding: 10px 0px;">
+                    <li class="content--bottom__bottom--ul-li1">
+                        <span v-cloak>{{i.StartTime.substring(11,16)}}</span>
+                        <span v-cloak>{{i.StopTime.substring(11,16)}}</span>
+                    </li>
+                    <li v-cloak>{{i.Language}}</li>
+                    <li v-cloak>{{i.OfficeName}}</li>
+                    <li style="color: red;">&yen;<span style="font-size: 1.2em; font-weight: bold;" v-cloak>{{i.Money}}</span></li>
+                    <li>
+                        <div v-if="i.Language=='英语'">
+                            <a :href="'ChooseSeat.aspx?OfficeID='+i.OfficeID+'&Language='+'english'+'&ChipInfoID='+i.ChipInfoID+'&Money='+i.Money">选座购票</a>
+                        </div>
+                        <div v-else-if="i.Language=='国语'">
+                            <a :href="'ChooseSeat.aspx?OfficeID='+i.OfficeID+'&Language='+'chinese'+'&ChipInfoID='+i.ChipInfoID+'&Money='+i.Money">选座购票</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

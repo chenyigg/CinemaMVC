@@ -36,7 +36,7 @@
                                 <span class="content-item__hot--contains__s1">@item.MovieName</span>
                             </dt>
                         </a>
-                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="ChooseCinema.aspx?MovieID=@item.MovieID">购票</a></dd>
+                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="@Url.Action("CinemaLoad","ChooseCinema",new { MovieID=item.MovieID})">购票</a></dd>
                     </dl>
                 }
             </div>
@@ -52,7 +52,7 @@
                                 <span class="content-item__hot--contains__s1">@item.MovieName</span>
                             </dt>
                         </a>
-                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="ChooseCinema.aspx?MovieID=@item.MovieID">购票</a></dd>
+                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="@Url.Action("CinemaLoad","ChooseCinema",new { MovieID=item.MovieID})">购票</a></dd>
                     </dl>
                 }
             </div>
@@ -68,7 +68,7 @@
                                 <span class="content-item__hot--contains__s1">@item.MovieName</span>
                             </dt>
                         </a>
-                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="ChooseCinema.aspx?MovieID=@item.MovieID">购票</a></dd>
+                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="@Url.Action("CinemaLoad","ChooseCinema",new { MovieID=item.MovieID})">购票</a></dd>
                     </dl>
                 }
             </div>

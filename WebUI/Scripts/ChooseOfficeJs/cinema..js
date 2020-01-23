@@ -72,7 +72,7 @@ $(function () {
             LoadInfo() {
                 //第一次请求返回厅院信息集合
                 $.ajax({
-                    url: "ChooseOffice.aspx?Method=FindOfficeInfo",
+                    url: "/ChooseOffice/FindOfficeInfo",
                     data: { MovieID: myur1, CinemaID: myur2 },
                     success: function (data) {
                         vm.ListShowDetails = data;
@@ -83,7 +83,7 @@ $(function () {
 
                 //第二次请求返回所有电影信息集合
                 $.ajax({
-                    url: "ChooseOffice.aspx?Method=FindMovieInfo",
+                    url: "/ChooseOffice/FindMovieInfo",
                     data: { MovieID: myur1, CinemaID: myur2 },
                     success: function (data) {
                         vm.ListMovie = data;
@@ -101,7 +101,7 @@ $(function () {
                 var btn = event.currentTarget;
 
                 $.ajax({
-                    url: "ChooseOffice.aspx?Method=FindMovieInfo",
+                    url: "/ChooseOffice/FindMovieInfo",
                     data: { MovieID: $(btn).attr("alt"), CinemaID: myur2 },
                     success: function (data) {
                         vm.ListMovie = data;
@@ -117,7 +117,7 @@ $(function () {
 
                 //第二次请求返回厅院信息集合
                 $.post({
-                    url: "ChooseOffice.aspx?Method=FindOfficeInfo",
+                    url: "/ChooseOffice/FindOfficeInfo",
                     data: { MovieID: $(btn).attr("alt"), CinemaID: myur2 },
                     success: function (data) {
                         vm.ListShowDetails = data;
@@ -128,7 +128,7 @@ $(function () {
             },
             Tod() {
                 $.ajax({
-                    url: "ChooseOffice.aspx?Method=FindTod",
+                    url: "/ChooseOffice/FindTod",
                     data: { MovieName: $('#mn').html(), CinemaID: myur2 },
                     success: function (data) {
                         vm.ListShowDetails = data;
@@ -138,7 +138,7 @@ $(function () {
             },
             Tom(event) {
                 $.ajax({
-                    url: "ChooseOffice.aspx?Method=FindTom",
+                    url: "/ChooseOffice/FindTom",
                     data: { MovieName: $('#mn').html(), CinemaID: myur2 },
                     success: function (data) {
                         vm.ListShowDetails = data;
