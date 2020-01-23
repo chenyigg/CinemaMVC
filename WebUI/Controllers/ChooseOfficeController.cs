@@ -19,38 +19,44 @@ namespace WebUI.Controllers
             return View(om);
         }
 
-        //public void FindTod()
-        //{
-        //    string b = Request["MovieName"].ToString();
-        //    MovieInfo mi = new MovieInfo();
-        //    mi.MovieName = Request["MovieName"].ToString();
-        //    CinemaInfo ci = new CinemaInfo();
-        //    ci.CinemaID = Convert.ToInt32(Request["CinemaID"]);
+        /// <summary>
+        /// 该电影今日排片
+        /// </summary>
+        /// <returns></returns>
+        public string FindTod()
+        {
+            string b = Request["MovieName"].ToString();
+            MovieInfo mi = new MovieInfo();
+            mi.MovieName = Request["MovieName"].ToString();
+            CinemaInfo ci = new CinemaInfo();
+            ci.CinemaID = Convert.ToInt32(Request["CinemaID"]);
 
-        //    List<ShowDetails> sd = new OfficeInfoBLL().FindTod(mi, ci);
-        //    var jsondata = JsonConvert.SerializeObject(sd);
-        //    Response.Write(jsondata);
-        //    Response.End();
-        //}
+            List<dynamic> sd = new OfficeInfoBLL().FindTod(mi, ci);
+            var jsondata = JsonConvert.SerializeObject(sd);
+            return jsondata;
+        }
 
-        //public void FindTom()
-        //{
-        //    string b = Request["MovieName"].ToString();
-        //    MovieInfoModel mi = new MovieInfoModel();
-        //    mi.MovieName = Request["MovieName"].ToString();
-        //    CinemaInfoModel ci = new CinemaInfoModel();
-        //    ci.CinemaID = Convert.ToInt32(Request["CinemaID"]);
+        /// <summary>
+        /// 该电影明日排片
+        /// </summary>
+        /// <returns></returns>
+        public string FindTom()
+        {
+            string b = Request["MovieName"].ToString();
+            MovieInfo mi = new MovieInfo();
+            mi.MovieName = Request["MovieName"].ToString();
+            CinemaInfo ci = new CinemaInfo();
+            ci.CinemaID = Convert.ToInt32(Request["CinemaID"]);
 
-        //    List<ShowDetails> sd = new ChooseOfficeBLL().FindTom(mi, ci);
-        //    var jsondata = JsonConvert.SerializeObject(sd);
-        //    Response.Write(jsondata);
-        //    Response.End();
-        //}
+            List<dynamic> sd = new OfficeInfoBLL().FindTom(mi, ci);
+            var jsondata = JsonConvert.SerializeObject(sd);
+            return jsondata;
+        }
 
         /// <summary>
         /// 找电影信息
         /// </summary>
-        public void FindMovieInfo()
+        public string FindMovieInfo()
         {
             //如果传入的影片ID和影院ID都不为空，
             //证明从电影界面点击进来
@@ -63,8 +69,7 @@ namespace WebUI.Controllers
 
                 List<MovieInfo> sd = new OfficeInfoBLL().FindMovieInfo(ci, mi);
                 var jsondata = JsonConvert.SerializeObject(sd);
-                Response.Write(jsondata);
-                Response.End();
+                return jsondata;
             }
             else
             {
@@ -75,8 +80,7 @@ namespace WebUI.Controllers
 
                 List<MovieInfo> sd = new OfficeInfoBLL().FindMovieInfo(ci, mi);
                 var jsondata = JsonConvert.SerializeObject(sd);
-                Response.Write(jsondata);
-                Response.End();
+                return jsondata;
             }
         }
 

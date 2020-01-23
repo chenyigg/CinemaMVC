@@ -114,9 +114,8 @@ $(function () {
                     dataType: "json",
                     async: true
                 })
-
                 //第二次请求返回厅院信息集合
-                $.post({
+                $.ajax({
                     url: "/ChooseOffice/FindOfficeInfo",
                     data: { MovieID: $(btn).attr("alt"), CinemaID: myur2 },
                     success: function (data) {

@@ -1,4 +1,4 @@
-﻿@model  IEnumerable<Model.MovieInfo>
+﻿@model  Model.MovieInfo
 @{
     ViewBag.Title = "MovieDetails";
 }
@@ -18,34 +18,34 @@
                 <dl class="content--top__content--item1__dl">
                     <dt>
                         <a href="">
-                            <img src="~/images/MovieCover/@Model.ToList()[0].MovieCover" alt="@Model.ToList()[0].MovieName" title="@Model.ToList()[0].MovieID" id="imgone">
+                            <img src="~/images/MovieCover/@Model.MovieCover" alt="@Model.MovieName" title="@Model.MovieID" id="imgone">
                         </a>
                     </dt>
                     <dd style="padding-top:5px">
-                        @Model.ToList()[0].MovieName
+                        @Model.MovieName
                     </dd>
                     <dd style="font-size: 1.4em;">LinXi Cinema</dd>
                     <dd style="padding-top: 10px;">
-                        @Model.ToList()[0].MovieType
+                        @Model.MovieType
                     </dd>
                     <dd>
-                        @Model.ToList()[0].MovieArea
-                        @Model.ToList()[0].MovieDuration 分钟
+                        @Model.MovieArea
+                        @Model.MovieDuration 分钟
                     </dd>
                     <dd>
-                        @Model.ToList()[0].MovieReleaseDate.ToString().Substring(0, 10) 大陆上映
+                        @Model.MovieReleaseDate.ToString().Substring(0, 10) 大陆上映
                     </dd>
                     <dd style="padding-top: 56px;" class="content--top__content--item1__dl--a">
                         <a href=""><span class="ion-ios-heart"></span>&nbsp;&nbsp;想看</a>
                         <a href=""><span class="ion-android-star"></span>&nbsp;&nbsp;评分</a>
                     </dd>
-                    <dd class="content--top__content--item1__dl--buy"><a href="@Url.Action("CinemaLoad","ChooseCinema",new { MovieID=Model.ToList()[0].MovieID})">特票优惠</a></dd>
+                    <dd class="content--top__content--item1__dl--buy"><a href="@Url.Action("CinemaLoad","ChooseCinema",new { MovieID=Model.MovieID})">特票优惠</a></dd>
                 </dl>
             </div>
             <div class="content--top__content--item2 col-5">
                 <dl>
                     <dd style="padding-top: 165px;">用户评分</dd>
-                    <dd><span style="color: orange;">@Model.ToList()[0].MovieScore</span>分</dd>
+                    <dd><span style="color: orange;">@Model.MovieScore</span>分</dd>
                     <dd>累计票房</dd>
                     <dd><span>1.85</span>亿</dd>
                 </dl>
@@ -55,7 +55,7 @@
     <div class="content--bottom row" id="contentbt">
         <span class="content--bottom__juqing">剧情简介</span>
         <div class="content--bottom__juqing--text">
-            @Model.ToList()[0].MovieBrief
+            @Model.MovieBrief
         </div>
 
         <div class="content--bottom__reping row">

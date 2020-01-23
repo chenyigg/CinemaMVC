@@ -37,3 +37,4 @@ using System.Runtime.InteropServices;
 
 //添加访问权限
 [assembly: InternalsVisibleTo("WebUI")]
+[assembly: InternalsVisibleTo("BLL")]

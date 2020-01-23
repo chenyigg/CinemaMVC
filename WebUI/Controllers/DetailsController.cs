@@ -41,7 +41,7 @@ namespace WebUI.Controllers
                 ls = new MovieInfoBLL().Select(m => m.MovieID == MovieID).Cast<MovieInfo>().ToList();
             }
 
-            return View(ls);
+            return View(ls[0]);
         }
 
         /// <summary>
