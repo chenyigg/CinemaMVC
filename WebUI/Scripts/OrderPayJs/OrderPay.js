@@ -29,10 +29,10 @@
 
     $('#Confirm').click(function () {
         console.log($('#OrderID').attr("order"));
-        var page = window.open("UrlPage.html?OrderID=" + $('#OrderID').attr("order"), "支付页面", "height=500, width=700, top=260, left=700,resizable=no");
+        var page = window.open("/OrderPay/UrlAbout?OrderID=" + $('#OrderID').attr("order"), "支付页面", "height=500, width=700, top=260, left=700,resizable=no");
         var timer = setInterval(function () {
             $.ajax({
-                url: "OrderPay.aspx?Method=IsPay",
+                url: "/OrderPay/IsPay",
                 async: false,
                 data: { OI: $('#OrderID').attr("order") },
                 success: function (data) {

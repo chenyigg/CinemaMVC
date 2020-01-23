@@ -135,11 +135,11 @@ namespace WebUI.Controllers
             //判断座位表，订单表，订单详情表是否都插入成功！
             if (c == 1 && b == 1 && a == 1)
             {
-                return Json(new { OrderID = orderID });
+                return Json(new { orderInfoModel.OrderID });
             }
             else
             {
-                return Json(new { OrderID = orderID });
+                return Json(new { OrderID = 0 });
             }
         }
     }

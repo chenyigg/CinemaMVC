@@ -13,3 +13,4 @@ E:\Asp.Net\CinemaMVC\DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.dll
 E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.pdb
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

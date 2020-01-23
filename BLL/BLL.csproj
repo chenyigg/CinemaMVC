@@ -55,6 +55,7 @@
     <Compile Include="OrderInfoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeatInfoBLL.cs" />
+    <Compile Include="UrlPageInfoBLL.cs" />
     <Compile Include="UsersInfoBLL.cs" />
   </ItemGroup>
   <ItemGroup>

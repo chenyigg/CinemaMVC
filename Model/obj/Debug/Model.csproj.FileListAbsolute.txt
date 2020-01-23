@@ -9,3 +9,4 @@ E:\Asp.Net\CinemaMVC\Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\Asp.Net\CinemaMVC\Model\obj\Debug\Model.csproj.CopyComplete
 E:\Asp.Net\CinemaMVC\Model\obj\Debug\Model.dll
 E:\Asp.Net\CinemaMVC\Model\obj\Debug\Model.pdb
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

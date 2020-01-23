@@ -133,8 +133,6 @@
     <Property Name="IsSeat" Type="int" Nullable="false" />
     <Property Name="ChipInfoID" Type="int" Nullable="false" />
   </EntityType>
-  <!--生成过程中发现错误:
-警告 6002: 表/视图“Cinema.dbo.UrlCountInnfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="UrlCountInnfo">
     <Key>
       <PropertyRef Name="Msg" />
@@ -358,6 +356,7 @@
     <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SeatInfo" EntityType="Self.SeatInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UrlCountInnfo" EntityType="Self.UrlCountInnfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrdersGoodsInfo" EntityType="Self.OrdersGoodsInfo" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
@@ -367,11 +366,6 @@
     [OrdersGoodsInfo].[StartTime] AS [StartTime], 
     [OrdersGoodsInfo].[StopTime] AS [StopTime]
     FROM [dbo].[OrdersGoodsInfo] AS [OrdersGoodsInfo]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="UrlCountInnfo" EntityType="Self.UrlCountInnfo" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [UrlCountInnfo].[Msg] AS [Msg]
-    FROM [dbo].[UrlCountInnfo] AS [UrlCountInnfo]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK__Chip__CinemaID__3B40CD36" Association="Self.FK__Chip__CinemaID__3B40CD36">
       <End Role="CinemaInfo" EntitySet="CinemaInfo" />

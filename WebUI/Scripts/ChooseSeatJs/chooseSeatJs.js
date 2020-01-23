@@ -46,7 +46,7 @@ var vm = new Vue({
                 success: function (data) {
                     alert("选座成功!");
                     setTimeout(function () {
-                        window.location.href = "OrderPay.aspx?OrderID=" + data.OrderID;
+                        window.location.href = "/OrderPay/PayLoad?OrderID=" + String(data.OrderID);
                     }, 1000)
                 },
                 Error: function () {

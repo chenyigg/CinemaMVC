@@ -60,6 +60,7 @@
     <Compile Include="OrderInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeatInfoDAL.cs" />
+    <Compile Include="UrlPageInfoDAL.cs" />
     <Compile Include="UsersInfoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
