@@ -1,0 +1,245 @@
+/* 中间内容区域 */
+body {
+    /*background: #acb6e5; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #86fde8, #acb6e5);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */*/
+}
+
+#content {
+    width: 90%;
+    margin-top: 40px;
+    margin: 0px auto;
+}
+
+.content-item__lunbo {
+    width: 100%;
+    height: 560px;
+    margin-top: 150px;
+    /*border: 1px solid red;*/
+}
+
+.left, .right {
+    margin-top: 20px;
+}
+
+.right {
+    left: 1%;
+    top: 17px;
+}
+
+.content-item {
+    width: 100%;
+    height: 700px;
+    margin-top: 40px;
+    /*border: 1px solid black;*/
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.text {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 2em;
+    letter-spacing: 3px;
+    /*border: 1px solid red;*/
+    text-indent: 30px;
+}
+
+.content-item__hot--text {
+    color: red;
+}
+
+.content-item__future--text {
+    color: blue;
+}
+
+.content-item__classics--text {
+    color: orange;
+}
+
+.content-item__hot--contains {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+    .content-item__hot--contains dl {
+        width: 210px;
+        height: 300px;
+        /*border: 1px solid green;*/
+        margin-left: 32px;
+        margin-top: 20px;
+    }
+
+    .content-item__hot--contains dt {
+        width: 210px;
+        height: 250px;
+        position: relative;
+        /*border-bottom: 1px solid green;*/
+        box-shadow: inset 2px 2px 20px 2px rgba(93, 92, 92, 0.589);
+        background-image: url("../images/未标题-1.jpg");
+    }
+
+.content-item__hot--contains__s1 {
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 210px;
+}
+
+.content-item__hot--contains__s2 {
+    width: 70px;
+    height: 40px;
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 210px;
+    left: 139px;
+}
+
+.content-item__hot--contains dl dd {
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.4em;
+    color: red;
+}
+
+    /*.GP {
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.4em;
+    color: red;
+    }
+
+    .GP:hover {
+        background-color: red;
+        color: white;
+    }*/
+
+    .content-item__hot--contains dl dd a:hover {
+        background-color: red;
+        color: white;
+    }
+
+/* 榜单内容样式 */
+.box {
+    width: 100%;
+    height: 710px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.content-item__list2 {
+    /*border: 1px solid black;*/
+    margin-top: 30px;
+}
+
+.content-item__list3 {
+    /*border: 1px solid black;*/
+    margin-top: 30px;
+}
+
+.content-item__list1--text {
+    height: 60px;
+    letter-spacing: 3px;
+}
+
+.texts {
+    font-size: 2em;
+    line-height: 50px;
+}
+
+.content-item__list1--text1 {
+    color: red;
+}
+
+.content-item__list1--no2 {
+    color: orange;
+}
+
+.content-item__list1--text3 {
+    color: blue;
+}
+
+.content-item__list1--text2 {
+    color: gray;
+    margin-left: 54%;
+    font-size: 1.2em;
+    border-bottom: 1px solid gray;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content-item__list1--bang {
+    height: 660px;
+}
+
+.content-item__list1--bang1 {
+    border: 1px solid lightgray;
+    height: 100px;
+}
+
+.content-item__list1--bang1__text:hover {
+    background-color: rgba(211, 211, 211, 0.397);
+}
+
+.content-item__list1--bang1__img {
+    width: 100%;
+    /*border: 1px solid brown;*/
+    height: 100px;
+}
+
+.content-item__list1--bang1__icon {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    top: 1px;
+}
+
+.content-item__list1--bang1__text1 {
+    text-indent: 5px;
+    font-size: 1.4em;
+    margin-top: 18px;
+    letter-spacing: 2px;
+    /*border: 1px solid green;*/
+}
+
+.content-item__list1--bang1__text2 {
+    text-indent: 5px;
+    font-size: 1.1em;
+    margin-top: 13px;
+    color: red;
+    /*border: 1px solid green;*/
+}
+
+.content-item__list1--bangs {
+    height: 560px;
+    /*border: 1px solid blue;*/
+}
+
+.content-item__list1--bangsth {
+    height: 62px;
+    font-size: 1.4em;
+    line-height: 62px;
+}
+
+    .content-item__list1--bangsth:hover {
+        background-color: rgba(211, 211, 211, 0.397);
+    }
+
+.content-item__list1--bangsth__shuzi {
+    /*border: 1px solid red;*/
+    font-style: italic;
+}
+
+.content-item__list1--bangsth__text {
+    /*border: 1px solid yellow;*/
+}
+
+.content-item__list1--bangsth__count {
+    /*border: 1px solid green;*/
+    text-align: right;
+    color: red;
+}

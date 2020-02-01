@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChipInfo">
+    <Key>
+      <PropertyRef Name="ChipInfoID" />
+    </Key>
+    <Property Name="ChipInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CinemaID" Type="Int32" Nullable="false" />
+    <Property Name="OfficeID" Type="Int32" Nullable="false" />
+    <Property Name="MovieName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CinemaInfo" Relationship="Self.FK__Chip__CinemaID__3B40CD36" FromRole="ChipInfo" ToRole="CinemaInfo" />
+    <NavigationProperty Name="OfficeInfo" Relationship="Self.FK__Chip__OfficeID__3C34F16F" FromRole="ChipInfo" ToRole="OfficeInfo" />
+    <NavigationProperty Name="OrderInfo" Relationship="Self.FK_OrderInfo_ChipInfo" FromRole="ChipInfo" ToRole="OrderInfo" />
+    <NavigationProperty Name="SeatInfo" Relationship="Self.FK_SeatInfo_ChipInfo" FromRole="ChipInfo" ToRole="SeatInfo" />
+  </EntityType>
+  <EntityType Name="CinemaInfo">
+    <Key>
+      <PropertyRef Name="CinemaID" />
+    </Key>
+    <Property Name="CinemaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CinemaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CinemaAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CinemaArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CinemaImg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ChipInfo" Relationship="Self.FK__Chip__CinemaID__3B40CD36" FromRole="CinemaInfo" ToRole="ChipInfo" />
+    <NavigationProperty Name="OfficeInfo" Relationship="Self.FK__OfficeInf__Cinem__5441852A" FromRole="CinemaInfo" ToRole="OfficeInfo" />
+    <NavigationProperty Name="OrdersGoodsInfo" Relationship="Self.FK__OrdersGoo__Cinem__5AEE82B9" FromRole="CinemaInfo" ToRole="OrdersGoodsInfo" />
+  </EntityType>
+  <EntityType Name="CommentInfo">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="Int32" Nullable="false" />
+    <Property Name="UsersID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserFace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CommentInfo1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CommentTime" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UsersInfo" Relationship="Self.FK_Comment_UsersInfo" FromRole="CommentInfo" ToRole="UsersInfo" />
+    <NavigationProperty Name="MovieInfo" Relationship="Self.FK_CommentInfo_MovieInfo" FromRole="CommentInfo" ToRole="MovieInfo" />
+  </EntityType>
+  <EntityType Name="MovieInfo">
+    <Key>
+      <PropertyRef Name="MovieID" />
+    </Key>
+    <Property Name="MovieID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MovieCover" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MovieBrief" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MovieMoney" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MovieReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MovieDuration" Type="Int32" Nullable="false" />
+    <Property Name="MovieDirect" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MovieType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MovieArea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MovieYears" Type="Int32" />
+    <Property Name="MovieScore" Type="Decimal" Precision="18" Scale="1" />
+    <Property Name="MoviePeople" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CommentInfo" Relationship="Self.FK_CommentInfo_MovieInfo" FromRole="MovieInfo" ToRole="CommentInfo" />
+  </EntityType>
+  <EntityType Name="MusicInfo">
+    <Key>
+      <PropertyRef Name="MusicID" />
+    </Key>
+    <Property Name="MusicID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MusicNmae" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MusicLenth" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MusicSinger" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsInfo">
+    <Key>
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="NewsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsPoster" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewsSynopsis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewsContent" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NewsSource" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IssueTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfficeInfo">
+    <Key>
+      <PropertyRef Name="OfficeID" />
+    </Key>
+    <Property Name="OfficeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OfficeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CinemaID" Type="Int32" Nullable="false" />
+    <Property Name="NullColOne" Type="Int32" />
+    <Property Name="NullColTwo" Type="Int32" />
+    <Property Name="OfficeCount" Type="Int32" />
+    <NavigationProperty Name="ChipInfo" Relationship="Self.FK__Chip__OfficeID__3C34F16F" FromRole="OfficeInfo" ToRole="ChipInfo" />
+    <NavigationProperty Name="CinemaInfo" Relationship="Self.FK__OfficeInf__Cinem__5441852A" FromRole="OfficeInfo" ToRole="CinemaInfo" />
+    <NavigationProperty Name="OrderInfo" Relationship="Self.FK__OrderInfo__Offic__59063A47" FromRole="OfficeInfo" ToRole="OrderInfo" />
+    <NavigationProperty Name="OrdersGoodsInfo" Relationship="Self.FK__OrdersGoo__Offic__5CD6CB2B" FromRole="OfficeInfo" ToRole="OrdersGoodsInfo" />
+    <NavigationProperty Name="SeatInfo" Relationship="Self.FK__SeatInfo__Office__5DCAEF64" FromRole="OfficeInfo" ToRole="SeatInfo" />
+  </EntityType>
+  <EntityType Name="OrderInfo">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderSumMoney" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UsersID" Type="Int32" Nullable="false" />
+    <Property Name="OrderTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MovieName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CinemaAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OfficeID" Type="Int32" Nullable="false" />
+    <Property Name="ChipInfoID" Type="Int32" Nullable="false" />
+    <Property Name="IsPay" Type="Int32" Nullable="false" />
+    <Property Name="PayTime" Type="Int32" />
+    <NavigationProperty Name="ChipInfo" Relationship="Self.FK_OrderInfo_ChipInfo" FromRole="OrderInfo" ToRole="ChipInfo" />
+    <NavigationProperty Name="OfficeInfo" Relationship="Self.FK__OrderInfo__Offic__59063A47" FromRole="OrderInfo" ToRole="OfficeInfo" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Order__5535A963" FromRole="OrderInfo" ToRole="OrderDetails" />
+    <NavigationProperty Name="UsersInfo" Relationship="Self.FK__OrderInfo__Users__7F2BE32F" FromRole="OrderInfo" ToRole="UsersInfo" />
+  </EntityType>
+  <EntityType Name="SeatInfo">
+    <Key>
+      <PropertyRef Name="SeatID" />
+    </Key>
+    <Property Name="SeatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OfficeID" Type="Int32" Nullable="false" />
+    <Property Name="IsSeat" Type="Int32" Nullable="false" />
+    <Property Name="ChipInfoID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ChipInfo" Relationship="Self.FK_SeatInfo_ChipInfo" FromRole="SeatInfo" ToRole="ChipInfo" />
+    <NavigationProperty Name="OfficeInfo" Relationship="Self.FK__SeatInfo__Office__5DCAEF64" FromRole="SeatInfo" ToRole="OfficeInfo" />
+    <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__SeatI__5629CD9C" FromRole="SeatInfo" ToRole="OrderDetails" />
+  </EntityType>
+  <EntityType Name="UsersInfo">
+    <Key>
+      <PropertyRef Name="UsersID" />
+    </Key>
+    <Property Name="UsersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UsersPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserSex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserIDCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserLevelNum" Type="Int32" />
+    <Property Name="UserMvp" Type="Int32" />
+    <Property Name="UserFace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CommentInfo" Relationship="Self.FK_Comment_UsersInfo" FromRole="UsersInfo" ToRole="CommentInfo" />
+    <NavigationProperty Name="OrderInfo" Relationship="Self.FK__OrderInfo__Users__7F2BE32F" FromRole="UsersInfo" ToRole="OrderInfo" />
+    <NavigationProperty Name="UsersInfo1" Relationship="Self.FK_UsersInfo_UsersInfo" FromRole="UsersInfo" ToRole="UsersInfo1" />
+    <NavigationProperty Name="UsersInfo2" Relationship="Self.FK_UsersInfo_UsersInfo" FromRole="UsersInfo1" ToRole="UsersInfo" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="SeatID" />
+      <PropertyRef Name="OrderDetailsPrice" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="StopTime" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="SeatID" Type="Int32" Nullable="false" />
+    <Property Name="OrderDetailsPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="OrderInfo" Relationship="Self.FK__OrderDeta__Order__5535A963" FromRole="OrderDetails" ToRole="OrderInfo" />
+    <NavigationProperty Name="SeatInfo" Relationship="Self.FK__OrderDeta__SeatI__5629CD9C" FromRole="OrderDetails" ToRole="SeatInfo" />
+  </EntityType>
+  <EntityType Name="OrdersGoodsInfo">
+    <Key>
+      <PropertyRef Name="CinemaID" />
+      <PropertyRef Name="OfficeID" />
+      <PropertyRef Name="MovieName" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="StopTime" />
+    </Key>
+    <Property Name="CinemaID" Type="Int32" Nullable="false" />
+    <Property Name="OfficeID" Type="Int32" Nullable="false" />
+    <Property Name="MovieName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StopTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="CinemaInfo" Relationship="Self.FK__OrdersGoo__Cinem__5AEE82B9" FromRole="OrdersGoodsInfo" ToRole="CinemaInfo" />
+    <NavigationProperty Name="OfficeInfo" Relationship="Self.FK__OrdersGoo__Offic__5CD6CB2B" FromRole="OrdersGoodsInfo" ToRole="OfficeInfo" />
+  </EntityType>
+  <EntityType Name="UrlCountInnfo">
+    <Key>
+      <PropertyRef Name="Msg" />
+    </Key>
+    <Property Name="Msg" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Chip__CinemaID__3B40CD36">
+    <End Role="CinemaInfo" Type="Self.CinemaInfo" Multiplicity="1" />
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaInfo">
+        <PropertyRef Name="CinemaID" />
+      </Principal>
+      <Dependent Role="ChipInfo">
+        <PropertyRef Name="CinemaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chip__OfficeID__3C34F16F">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="ChipInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderInfo_ChipInfo">
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChipInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeatInfo_ChipInfo">
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="1" />
+    <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChipInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Principal>
+      <Dependent Role="SeatInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OfficeInf__Cinem__5441852A">
+    <End Role="CinemaInfo" Type="Self.CinemaInfo" Multiplicity="1" />
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaInfo">
+        <PropertyRef Name="CinemaID" />
+      </Principal>
+      <Dependent Role="OfficeInfo">
+        <PropertyRef Name="CinemaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrdersGoo__Cinem__5AEE82B9">
+    <End Role="CinemaInfo" Type="Self.CinemaInfo" Multiplicity="1" />
+    <End Role="OrdersGoodsInfo" Type="Self.OrdersGoodsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaInfo">
+        <PropertyRef Name="CinemaID" />
+      </Principal>
+      <Dependent Role="OrdersGoodsInfo">
+        <PropertyRef Name="CinemaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_UsersInfo">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+    <End Role="CommentInfo" Type="Self.CommentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="CommentInfo">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentInfo_MovieInfo">
+    <End Role="MovieInfo" Type="Self.MovieInfo" Multiplicity="1" />
+    <End Role="CommentInfo" Type="Self.CommentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MovieInfo">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="CommentInfo">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderInfo__Offic__59063A47">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrdersGoo__Offic__5CD6CB2B">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="OrdersGoodsInfo" Type="Self.OrdersGoodsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="OrdersGoodsInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SeatInfo__Office__5DCAEF64">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="SeatInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__Order__5535A963">
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderInfo">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderInfo__Users__7F2BE32F">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__SeatI__5629CD9C">
+    <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SeatInfo">
+        <PropertyRef Name="SeatID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="SeatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersInfo_UsersInfo">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+    <End Role="UsersInfo1" Type="Self.UsersInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="UsersInfo1">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemaEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChipInfo" EntityType="Self.ChipInfo" />
+    <EntitySet Name="CinemaInfo" EntityType="Self.CinemaInfo" />
+    <EntitySet Name="CommentInfo" EntityType="Self.CommentInfo" />
+    <EntitySet Name="MovieInfo" EntityType="Self.MovieInfo" />
+    <EntitySet Name="MusicInfo" EntityType="Self.MusicInfo" />
+    <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" />
+    <EntitySet Name="OfficeInfo" EntityType="Self.OfficeInfo" />
+    <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" />
+    <EntitySet Name="SeatInfo" EntityType="Self.SeatInfo" />
+    <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" />
+    <EntitySet Name="OrdersGoodsInfo" EntityType="Self.OrdersGoodsInfo" />
+    <EntitySet Name="UrlCountInnfo" EntityType="Self.UrlCountInnfo" />
+    <AssociationSet Name="FK__Chip__CinemaID__3B40CD36" Association="Self.FK__Chip__CinemaID__3B40CD36">
+      <End Role="CinemaInfo" EntitySet="CinemaInfo" />
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chip__OfficeID__3C34F16F" Association="Self.FK__Chip__OfficeID__3C34F16F">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderInfo_ChipInfo" Association="Self.FK_OrderInfo_ChipInfo">
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeatInfo_ChipInfo" Association="Self.FK_SeatInfo_ChipInfo">
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+      <End Role="SeatInfo" EntitySet="SeatInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OfficeInf__Cinem__5441852A" Association="Self.FK__OfficeInf__Cinem__5441852A">
+      <End Role="CinemaInfo" EntitySet="CinemaInfo" />
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrdersGoo__Cinem__5AEE82B9" Association="Self.FK__OrdersGoo__Cinem__5AEE82B9">
+      <End Role="CinemaInfo" EntitySet="CinemaInfo" />
+      <End Role="OrdersGoodsInfo" EntitySet="OrdersGoodsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_UsersInfo" Association="Self.FK_Comment_UsersInfo">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="CommentInfo" EntitySet="CommentInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentInfo_MovieInfo" Association="Self.FK_CommentInfo_MovieInfo">
+      <End Role="MovieInfo" EntitySet="MovieInfo" />
+      <End Role="CommentInfo" EntitySet="CommentInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderInfo__Offic__59063A47" Association="Self.FK__OrderInfo__Offic__59063A47">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrdersGoo__Offic__5CD6CB2B" Association="Self.FK__OrdersGoo__Offic__5CD6CB2B">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="OrdersGoodsInfo" EntitySet="OrdersGoodsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SeatInfo__Office__5DCAEF64" Association="Self.FK__SeatInfo__Office__5DCAEF64">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="SeatInfo" EntitySet="SeatInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__Order__5535A963" Association="Self.FK__OrderDeta__Order__5535A963">
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderInfo__Users__7F2BE32F" Association="Self.FK__OrderInfo__Users__7F2BE32F">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__SeatI__5629CD9C" Association="Self.FK__OrderDeta__SeatI__5629CD9C">
+      <End Role="SeatInfo" EntitySet="SeatInfo" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersInfo_UsersInfo" Association="Self.FK_UsersInfo_UsersInfo">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="UsersInfo1" EntitySet="UsersInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

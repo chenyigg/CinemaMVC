@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAL
+{
+    /// <summary>
+    /// 定义增删改查分页的接口
+    /// </summary>
+    public interface IBaseDAL<T> where T : class, new()
+
+    {
+        /// <summary>
+        /// 增
+        /// </summary>
+        /// <param name="entity">需要打上标记的类</param>
+        /// <returns></returns>
+        void Add(T entity);
+
+        /// <summary>
+        /// 删
+        /// </summary>
+        /// <param name="entity">需要打上标记的类</param>
+        /// <returns></returns>
+        void Delete(T entity);
+
+        /// <summary>
+        /// 改
+        /// </summary>
+        /// <param name="entity">需要打上标记的类</param>
+        /// <returns></returns>
+        void Update(T entity);
+
+        /// <summary>
+        /// 查
+        /// </summary>
+        /// <param name="wherelambda">查询表达式</param>
+        /// <returns></returns>
+        IQueryable Select(Expression<Func<T, bool>> wherelambda);
+
+        /// <summary>
+        /// 分页
+        /// </summary>
+        /// <typeparam name="s"></typeparam>
+        /// <param name="pageIndex">页码</param>
+        /// <param name="pageSize">页面显示数量</param>
+        /// <param name="count">总行数</param>
+        /// <param name="wherelambda">查询表达式</param>
+        /// <param name="orderbylambda">排序表达式</param>
+        /// <param name="isAsc">是否升序</param>
+        /// <returns></returns>
+        IQueryable SelectPage<s>(int pageIndex, int pageSize, out int count, Expression<Func<T, bool>> wherelambda, Expression<Func<T, s>> orderbylambda, bool isAsc);
+
+        /// <summary>
+        /// 一次性保存更改
+        /// </summary>
+        /// <returns></returns>
+        bool SaveChanges();
+    }
+}

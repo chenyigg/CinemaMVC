@@ -1,0 +1,131 @@
+#chooseSeat_section {
+    width: 80%;
+    margin: 0px auto;
+    height: 1050px;
+    border: 1px solid white;
+}
+
+.chooseSeat_section_header {
+    width: 100%;
+    height: 120px;
+    /*border: 1px solid red;*/
+}
+
+    .chooseSeat_section_header img {
+        width: 100%;
+        height: 100%;
+    }
+
+.chooseSeat_section_body {
+    width: 100%;
+    height: 780px;
+    border: 1px dashed rgb(233, 233, 233);
+}
+
+.chooseSeat_section_body_left {
+    height: 780px;
+    /*border: 1px solid rgb(255, 0, 0);*/
+}
+
+.chooseSeat_section_body_right {
+    height: 780px;
+    /*border: 1px solid rgb(0, 255, 34);*/
+    background-color: rgb(240, 240, 240);
+}
+
+.chooseSeat_section_body_left_top {
+    height: 30%;
+    width: 100%;
+    /*border: 1px solid rgb(0, 255, 34);*/
+}
+
+    .chooseSeat_section_body_left_top img {
+        height: 90%;
+        width: 100%;
+    }
+
+.chooseSeat_section_body_left_buttom {
+    height: 70%;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.chooseSeat_section_body_right_MovieInfo {
+    height: 50%;
+    width: 100%;
+    /*border: 1px solid rgb(0, 0, 0);*/
+}
+
+.chooseSeat_section_body_right_SeatInfo,
+.chooseSeat_section_body_right_UserInfo {
+    height: 25%;
+    width: 100%;
+    /*border: 1px solid rgb(0, 0, 0);*/
+}
+
+.chooseSeat_section_body_right_MovieInfo_top {
+    height: 50%;
+    width: 100%;
+    /*border: 1px solid rgb(0, 0, 0);*/
+}
+
+.chooseSeat_section_body_right_MovieInfo_topImg {
+    padding-left: 3%;
+    padding-top: 3%;
+    /*border: 1px solid rgb(255, 0, 0);*/
+}
+
+    .chooseSeat_section_body_right_MovieInfo_topImg img {
+        height: 170px;
+    }
+
+.chooseSeat_section_body_right_MovieInfo_topText {
+    /*border: 1px solid rgb(255, 6, 6);*/
+    padding-left: 3%;
+    padding-top: 3%;
+}
+
+.chooseSeat_section_body_right_MovieInfo_topText_title {
+    font-size: 1.5em;
+    letter-spacing: 5px;
+}
+
+.chooseSeat_section_body_right_MovieInfo_buttom {
+    line-height: 40px;
+    padding-left: 3%;
+}
+
+.chooseSeat_section_body_right_MovieInfo_text {
+    color: gray;
+}
+
+.chooseSeat_section_body_right_SeatInfo {
+    padding-left: 3%;
+    line-height: 60px;
+}
+
+.chooseSeat_section_body_right_SeatInfo_price {
+    color: red;
+    font-size: 25px;
+}
+
+.chooseSeat_section_body_right_UserInfo {
+    padding-top: 80px;
+    padding-left: 20%;
+}
+
+    .chooseSeat_section_body_right_UserInfo span {
+        color: gray;
+        margin-left: 15%;
+    }
+
+    .chooseSeat_section_body_right_UserInfo p:nth-child(2) {
+        margin-top: 20px;
+    }
+
+    .chooseSeat_section_body_right_UserInfo button {
+        border-radius: 25px;
+        font-size: 30px;
+        width: 70%;
+        height: 50px;
+    }

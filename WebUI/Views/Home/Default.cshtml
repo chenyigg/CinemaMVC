@@ -1,0 +1,222 @@
+﻿@{
+    ViewBag.Title = "Default";
+}
+
+<link rel="stylesheet" href="~/Content/MainCss/lunbo.css" />
+<link rel="stylesheet" href="~/Content/MainCss/content.css">
+<script type="text/javascript" src="~/Scripts/MainJs/lunbo.js"></script>
+<script src="~/Scripts/vue.js"></script>
+
+<section id="content" class="row">
+    <div class="content-item__lunbo">
+        <div id="drag-container">
+            <div id="spin-container">
+                @foreach (var item in ViewBag.LbMovieInfo)
+                {
+                    <a href="@Url.Action("MovieDetails", "Details", new { MovieID = item.MovieID })">
+                        <img src="../images/MovieCover/@item.MovieCover" alt="">
+                    </a>
+                }
+
+                <p style="font-size: 80px;">灵 犀 影 院</p>
+            </div>
+            <div id="ground"></div>
+        </div>
+        <div id="music-container"></div>
+    </div>
+    <div class="left col-9">
+        <div class="content-item">
+            <div class="content-item__hot--text text">正在热映 @ViewBag.HotCount 部</div>
+            <div class="content-item__hot--contains">
+                @foreach (var item in ViewBag.Hot)
+                {
+                    <dl>
+                        <a style="height: 250px; width: 210px; display: block" href="@Url.Action("MovieDetails","Details",new {MovieID=item.MovieID})" title='@item.MovieName'>
+                            <dt style="background-image: url('../images/MainCover/@item.MovieCover'); overflow:hidden">
+                                <span class="content-item__hot--contains__s1">@item.MovieName</span>
+                            </dt>
+                        </a>
+                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="ChooseCinema.aspx?MovieID=@item.MovieID">购票</a></dd>
+                    </dl>
+                }
+            </div>
+        </div>
+        <div class="content-item">
+            <div class="content-item__future--text text">即将上映 @ViewBag.NoUpCount 部</div>
+            <div class="content-item__hot--contains">
+                @foreach (var item in ViewBag.NoUp)
+                {
+                    <dl>
+                        <a style="height: 250px; width: 210px; display: block" href="@Url.Action("MovieDetails","Details",new {MovieID=item.MovieID})" title='@item.MovieName'>
+                            <dt style="background-image: url('../images/MainCover/@item.MovieCover'); overflow: hidden">
+                                <span class="content-item__hot--contains__s1">@item.MovieName</span>
+                            </dt>
+                        </a>
+                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="ChooseCinema.aspx?MovieID=@item.MovieID">购票</a></dd>
+                    </dl>
+                }
+            </div>
+        </div>
+        <div class="content-item">
+            <div class="content-item__classics--text text">经典电影 @ViewBag.ScoreCount 部</div>
+            <div class="content-item__hot--contains">
+                @foreach (var item in ViewBag.Score)
+                {
+                    <dl>
+                        <a style="height: 250px; width: 210px; display: block" href="@Url.Action("MovieDetails","Details",new {MovieID=item.MovieID})" title='@item.MovieName'>
+                            <dt style="background-image: url('../images/MainCover/@item.MovieCover'); overflow: hidden">
+                                <span class="content-item__hot--contains__s1">@item.MovieName</span>
+                            </dt>
+                        </a>
+                        <dd><a style="height: 50px; width: 210px; display: block; border: 1px solid lightgray;" href="ChooseCinema.aspx?MovieID=@item.MovieID">购票</a></dd>
+                    </dl>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="right col-3">
+        <div class="content-item__list1 box" style="border: none;">
+            <div class="content-item__list1--text">
+                <span class="content-item__list1--text1 texts">今日票房</span>
+                <span class="content-item__list1--text2"><a href="List.aspx">更多</a><span class="ion-chevron-right "></span></span>
+            </div>
+            <div class="content-item__list1--bang">
+                @* 使用{}可以定义变量 *@
+                @*@{ int d = 0;}*@
+                @if (ViewBag.MovieMoneyTop != null)
+                {
+                    int index = 0;
+                    foreach (var item in ViewBag.MovieMoneyTop)
+                    {
+                        if (index == 0)
+                        {
+                            <div class="content-item__list1--bang1 row">
+                                <div class="content-item__list1--bang1__tu col-5">
+                                    <div class="content-item__list1--bang1__img">
+                                        <img src="~/images/MovieCover/@item.MovieCover" style="width: 100%; height: 100px;" alt="">
+                                    </div>
+                                    <div class="content-item__list1--bang1__icon">
+                                        <img src="~/images/MovieImg/今日票房.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="content-item__list1--bang1__text col-7">
+                                    <div class="content-item__list1--bang1__text1">@item.MovieName</div>
+                                    <div class="content-item__list1--bang1__text2">@item.OrderSumMoney 元</div>
+                                </div>
+                            </div>
+                            index++;
+                        }
+                        else
+                        {
+                            <ul>
+                                <a href="@Url.Action("MovieDetails","Details",new {MovieID=item.MovieID})" style="display: block; width: 100%;">
+                                    <li class="content-item__list1--bangsth row">
+                                        <span class="content-item__list1--bangsth__shuzi col-1">&nbsp;@(index + 1)</span>
+                                        <span class="content-item__list1--bangsth__text col-8">@item.MovieName</span>
+                                        <span class="content-item__list1--bangsth__count col-3">@item.OrderSumMoney 元</span>
+                                    </li>
+                                </a>
+                            </ul>
+                        }
+                    }
+                }
+            </div>
+        </div>
+        <div class="content-item__list2 box">
+            <div class="content-item__list1--text">
+                <span class="content-item__list1--no2 texts">最受期待</span>
+                <span class="content-item__list1--text2"><a href="List.aspx">更多</a><span class="ion-chevron-right "></span></span>
+            </div>
+            <div class="content-item__list1--bang">
+                <div class="content-item__list1--bang">
+
+                    @if (ViewBag.MovieMoneyTop != null)
+                    {
+                        int index = 0;
+                        foreach (var item in ViewBag.ScoreMovieInfo)
+                        {
+                            if (index == 0)
+                            {
+                                <div class="content-item__list1--bang1 row">
+                                    <div class="content-item__list1--bang1__tu col-5">
+                                        <div class="content-item__list1--bang1__img">
+                                            <img src="~/images/MovieCover/@item.MovieCover" style="width: 100%; height: 100px;" alt="">
+                                        </div>
+                                        <div class="content-item__list1--bang1__icon">
+                                            <img src="~/images/MovieImg/最受期待.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-item__list1--bang1__text col-7">
+                                        <div class="content-item__list1--bang1__text1">@item.MovieName</div>
+                                        <div class="content-item__list1--bang1__text2">@item.MovieArea</div>
+                                    </div>
+                                </div>
+                                index++;
+                            }
+                            else
+                            {
+                                <ul>
+                                    <a href="@Url.Action("MovieDetails","Details",new {MovieID=item.MovieID})" style="display: block; width: 100%;">
+                                        <li class="content-item__list1--bangsth row">
+                                            <span class="content-item__list1--bangsth__shuzi col-1">&nbsp;@(index + 1)</span>
+                                            <span class="content-item__list1--bangsth__text col-8">@item.MovieName</span>
+                                            <span class="content-item__list1--bangsth__count col-3">@item.MovieArea</span>
+                                        </li>
+                                    </a>
+                                </ul>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="content-item__list3 box" style="overflow: hidden">
+                <div class="content-item__list1--text">
+                    <span class="content-item__list1--text3 texts">经典Top</span>
+                    <span class="content-item__list1--text2"><a href="List.aspx">更多</a><span class="ion-chevron-right "></span></span>
+                </div>
+                <div class="content-item__list1--bang">
+                    <div class="content-item__list1--bang">
+
+                        @if (ViewBag.MovieMoneyTop != null)
+                        {
+                            int index = 0;
+                            foreach (var item in ViewBag.MovieInfos)
+                            {
+                                if (index == 0)
+                                {
+                                    <div class="content-item__list1--bang1 row">
+                                        <div class="content-item__list1--bang1__tu col-5">
+                                            <div class="content-item__list1--bang1__img">
+                                                <img src="~/images/MovieCover/@item.MovieCover" style="width: 100%; height: 100px;" alt="">
+                                            </div>
+                                            <div class="content-item__list1--bang1__icon">
+                                                <img src="~/images/MovieImg/经典top.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="content-item__list1--bang1__text col-7">
+                                            <div class="content-item__list1--bang1__text1">@item.MovieName</div>
+                                            <div class="content-item__list1--bang1__text2">@item.MovieType</div>
+                                        </div>
+                                    </div>
+                                    index++;
+                                }
+                                else
+                                {
+                                    <ul>
+                                        <a href="@Url.Action("MovieDetails","Details",new {MovieID=item.MovieID})" style="display: block; width: 100%;">
+                                            <li class="content-item__list1--bangsth row">
+                                                <span class="content-item__list1--bangsth__shuzi col-1">&nbsp;@(index + 1)</span>
+                                                <span class="content-item__list1--bangsth__text col-8">@item.MovieName</span>
+                                                <span class="content-item__list1--bangsth__count col-3">@item.MovieType</span>
+                                            </li>
+                                        </a>
+                                    </ul>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

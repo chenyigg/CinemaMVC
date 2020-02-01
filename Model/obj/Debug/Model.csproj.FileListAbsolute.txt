@@ -1,0 +1,11 @@
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\Model.dll.config
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\Model.dll
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\Model.pdb
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\EntityFramework.dll
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\EntityFramework.xml
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\Asp.Net\CinemaMVC\Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Asp.Net\CinemaMVC\Model\obj\Debug\Model.csproj.CopyComplete
+E:\Asp.Net\CinemaMVC\Model\obj\Debug\Model.dll
+E:\Asp.Net\CinemaMVC\Model\obj\Debug\Model.pdb

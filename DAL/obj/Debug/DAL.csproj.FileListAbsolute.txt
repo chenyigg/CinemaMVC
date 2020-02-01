@@ -1,0 +1,15 @@
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\DAL.dll.config
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\DAL.dll
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\DAL.pdb
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\EntityFramework.dll
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\Model.dll
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\Model.pdb
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\Model.dll.config
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\EntityFramework.xml
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Asp.Net\CinemaMVC\DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.dll
+E:\Asp.Net\CinemaMVC\DAL\obj\Debug\DAL.pdb

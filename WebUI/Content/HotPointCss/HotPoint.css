@@ -1,0 +1,54 @@
+#HotPoint_content {
+    border: 1px solid black;
+    margin: 0px auto;
+    width: 80%;
+}
+
+.htmleaf-container {
+    border: 1px solid black;
+    width: 100%;
+    height: auto;
+}
+
+#Section1 dl {
+    margin-left: 1%;
+}
+
+    #Section1 dl dt {
+        height: 200px;
+        box-shadow: 0px 0px 5px 2px gray;
+    }
+
+    #Section1 dl div {
+        margin-left: 1%;
+        height: 200px;
+        box-shadow: 0px 0px 5px 2px gray;
+    }
+
+#Section2 dl {
+    text-align: center;
+}
+
+    #Section2 dl dt video {
+        height: 200px;
+        width: 400px;
+        box-shadow: 0px 0px 5px 2px gray;
+    }
+
+.flex_container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.flex_container_item {
+    margin-left: 2%;
+}
+
+.title,
+.music_body_list_item {
+    text-align: center;
+}
+
+    .music_body_list_item audio {
+        width: 300px;
+    }

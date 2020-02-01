@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CinemaModelStoreContainer" CdmEntityContainer="CinemaEntities1">
+    <EntitySetMapping Name="ChipInfo">
+      <EntityTypeMapping TypeName="CinemaModel.ChipInfo">
+        <MappingFragment StoreEntitySet="ChipInfo">
+          <ScalarProperty Name="ChipInfoID" ColumnName="ChipInfoID" />
+          <ScalarProperty Name="CinemaID" ColumnName="CinemaID" />
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="StopTime" ColumnName="StopTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CinemaInfo">
+      <EntityTypeMapping TypeName="CinemaModel.CinemaInfo">
+        <MappingFragment StoreEntitySet="CinemaInfo">
+          <ScalarProperty Name="CinemaID" ColumnName="CinemaID" />
+          <ScalarProperty Name="CinemaName" ColumnName="CinemaName" />
+          <ScalarProperty Name="CinemaAddress" ColumnName="CinemaAddress" />
+          <ScalarProperty Name="CinemaArea" ColumnName="CinemaArea" />
+          <ScalarProperty Name="CinemaImg" ColumnName="CinemaImg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentInfo">
+      <EntityTypeMapping TypeName="CinemaModel.CommentInfo">
+        <MappingFragment StoreEntitySet="CommentInfo">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserFace" ColumnName="UserFace" />
+          <ScalarProperty Name="CommentInfo1" ColumnName="CommentInfo" />
+          <ScalarProperty Name="CommentTime" ColumnName="CommentTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovieInfo">
+      <EntityTypeMapping TypeName="CinemaModel.MovieInfo">
+        <MappingFragment StoreEntitySet="MovieInfo">
+          <ScalarProperty Name="MovieID" ColumnName="MovieID" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="MovieCover" ColumnName="MovieCover" />
+          <ScalarProperty Name="MovieBrief" ColumnName="MovieBrief" />
+          <ScalarProperty Name="MovieMoney" ColumnName="MovieMoney" />
+          <ScalarProperty Name="MovieReleaseDate" ColumnName="MovieReleaseDate" />
+          <ScalarProperty Name="MovieDuration" ColumnName="MovieDuration" />
+          <ScalarProperty Name="MovieDirect" ColumnName="MovieDirect" />
+          <ScalarProperty Name="MovieType" ColumnName="MovieType" />
+          <ScalarProperty Name="MovieArea" ColumnName="MovieArea" />
+          <ScalarProperty Name="MovieYears" ColumnName="MovieYears" />
+          <ScalarProperty Name="MovieScore" ColumnName="MovieScore" />
+          <ScalarProperty Name="MoviePeople" ColumnName="MoviePeople" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MusicInfo">
+      <EntityTypeMapping TypeName="CinemaModel.MusicInfo">
+        <MappingFragment StoreEntitySet="MusicInfo">
+          <ScalarProperty Name="MusicID" ColumnName="MusicID" />
+          <ScalarProperty Name="MusicNmae" ColumnName="MusicNmae" />
+          <ScalarProperty Name="MusicLenth" ColumnName="MusicLenth" />
+          <ScalarProperty Name="MusicSinger" ColumnName="MusicSinger" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsInfo">
+      <EntityTypeMapping TypeName="CinemaModel.NewsInfo">
+        <MappingFragment StoreEntitySet="NewsInfo">
+          <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+          <ScalarProperty Name="NewsPoster" ColumnName="NewsPoster" />
+          <ScalarProperty Name="NewsSynopsis" ColumnName="NewsSynopsis" />
+          <ScalarProperty Name="NewsContent" ColumnName="NewsContent" />
+          <ScalarProperty Name="NewsSource" ColumnName="NewsSource" />
+          <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficeInfo">
+      <EntityTypeMapping TypeName="CinemaModel.OfficeInfo">
+        <MappingFragment StoreEntitySet="OfficeInfo">
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="OfficeName" ColumnName="OfficeName" />
+          <ScalarProperty Name="CinemaID" ColumnName="CinemaID" />
+          <ScalarProperty Name="NullColOne" ColumnName="NullColOne" />
+          <ScalarProperty Name="NullColTwo" ColumnName="NullColTwo" />
+          <ScalarProperty Name="OfficeCount" ColumnName="OfficeCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderInfo">
+      <EntityTypeMapping TypeName="CinemaModel.OrderInfo">
+        <MappingFragment StoreEntitySet="OrderInfo">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderSumMoney" ColumnName="OrderSumMoney" />
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="CinemaAddress" ColumnName="CinemaAddress" />
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="ChipInfoID" ColumnName="ChipInfoID" />
+          <ScalarProperty Name="IsPay" ColumnName="IsPay" />
+          <ScalarProperty Name="PayTime" ColumnName="PayTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SeatInfo">
+      <EntityTypeMapping TypeName="CinemaModel.SeatInfo">
+        <MappingFragment StoreEntitySet="SeatInfo">
+          <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="IsSeat" ColumnName="IsSeat" />
+          <ScalarProperty Name="ChipInfoID" ColumnName="ChipInfoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersInfo">
+      <EntityTypeMapping TypeName="CinemaModel.UsersInfo">
+        <MappingFragment StoreEntitySet="UsersInfo">
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="UserAccount" ColumnName="UserAccount" />
+          <ScalarProperty Name="UsersPwd" ColumnName="UsersPwd" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserSex" ColumnName="UserSex" />
+          <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+          <ScalarProperty Name="UserIDCard" ColumnName="UserIDCard" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="UserLevelNum" ColumnName="UserLevelNum" />
+          <ScalarProperty Name="UserMvp" ColumnName="UserMvp" />
+          <ScalarProperty Name="UserFace" ColumnName="UserFace" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="CinemaModel.OrderDetails">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="SeatID" ColumnName="SeatID" />
+          <ScalarProperty Name="OrderDetailsPrice" ColumnName="OrderDetailsPrice" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="StopTime" ColumnName="StopTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdersGoodsInfo">
+      <EntityTypeMapping TypeName="CinemaModel.OrdersGoodsInfo">
+        <MappingFragment StoreEntitySet="OrdersGoodsInfo">
+          <ScalarProperty Name="CinemaID" ColumnName="CinemaID" />
+          <ScalarProperty Name="OfficeID" ColumnName="OfficeID" />
+          <ScalarProperty Name="MovieName" ColumnName="MovieName" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="StopTime" ColumnName="StopTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UrlCountInnfo">
+      <EntityTypeMapping TypeName="CinemaModel.UrlCountInnfo">
+        <MappingFragment StoreEntitySet="UrlCountInnfo">
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,140 @@
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#content {
+    width: 80%;
+    margin: 0px auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content--select {
+    margin-top: 170px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid lightgray;
+}
+
+.content--select__brand,
+.content--select__district {
+    border-bottom: 2px dashed lightgray;
+    overflow: hidden;
+}
+
+.content--select__text {
+    float: left;
+    font-size: 1.3em;
+    color: gray;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.content--select-div li {
+    height: 50px;
+    line-height: 50px;
+}
+
+.content--select__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    font-size: 1.4em;
+    margin-top: 5px;
+}
+
+    .content--select__container li:hover {
+        background-color: rgba(133, 124, 124, 0.719);
+        cursor: pointer;
+    }
+
+.flex-container_item {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 2%;
+    text-align: center;
+    /*border: 1px solid blue;*/
+    border-radius: 10px;
+}
+
+.content--select__special--active,
+.content--select__brand--active,
+.content--select__district--active {
+    background-color: red;
+    color: white;
+}
+
+.content--address {
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+.content--address--cinemaadd {
+    border-left: 3px solid red;
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 5px;
+}
+
+.content--address--cinemalist__item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-bottom: 2px dashed lightgray;
+}
+
+.content--address--cinemalist__item--left {
+    float: left;
+}
+
+    .content--address--cinemalist__item--left li:nth-child(1) {
+        font-size: 1.4em;
+    }
+
+    .content--address--cinemalist__item--left li:nth-child(2) {
+        color: gray;
+    }
+
+.content--address--cinemalist__item--right {
+    margin-left: 87%;
+    line-height: 50px;
+}
+
+    .content--address--cinemalist__item--right span:nth-child(1) {
+        font-size: 1.3em;
+        font-weight: bold;
+        color: red;
+    }
+
+    .content--address--cinemalist__item--right span:nth-child(2) {
+        margin-left: 10%;
+        font-size: 1.2em;
+        padding: 7px;
+        border-radius: 30px;
+        background-color: red;
+        box-shadow: 0px 0px 3px 2px red;
+        color: white;
+        border: 1px solid red;
+    }
+
+        .content--address--cinemalist__item--right span:nth-child(2) a:hover {
+            color: white;
+        }
+
+[v-cloak] {
+    display: none;
+}
+
+@media screen and(max-width:800px) {
+    .content--address--cinemalist__item--right {
+        margin-left: 30%;
+    }
+}

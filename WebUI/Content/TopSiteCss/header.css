@@ -1,0 +1,169 @@
+/* 顶部导航栏部分 */
+
+#header {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 1000;
+    border-bottom: 2px solid lightgray;
+    background-color: white;
+}
+
+.header-logo {
+    text-align: right;
+}
+
+    .header-logo img {
+        width: 130px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+.header-nav {
+    height: 100px;
+}
+
+.header-nav__item {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .header-nav__item:hover {
+        border-bottom: 3px solid rgb(238, 17, 17);
+    }
+
+.header-nav__item-tubiao {
+    line-height: 100px;
+    font-size: 1.8em;
+}
+
+.ion-chevron-down {
+    font-size: 1.5em;
+}
+
+.header-nav__item-text {
+    display: inline-block;
+    margin-left: 3px;
+    letter-spacing: 2px;
+    line-height: 75px;
+    font-size: 1.9em;
+}
+
+.header-tooblar__search {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    left: 7px;
+    position: relative;
+}
+
+.header-tooblar__search--text {
+    width: 100%;
+    height: 50px;
+    border-radius: 35px;
+    text-indent: 10px;
+    font-size: 1.2em;
+    background-color: rgba(199, 176, 165, 0.164);
+    border: 1px solid lightgray;
+}
+
+.header-tooblar__search--tubiao {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    left: 85%;
+    top: -93px;
+    border-radius: 50px;
+    background-color: rgb(238, 17, 17);
+    border: 1px solid red;
+}
+
+.ion-android-search {
+    color: white;
+    font-size: 2.2em;
+}
+
+.header-tooblar__identity {
+    width: 100%;
+    height: 100px;
+}
+
+.identity {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 50px;
+    background-color: rgba(199, 176, 165, 0.164);
+    border: 1px solid lightgray;
+}
+
+.header-tooblar__identity--login {
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.header-tooblar__identity--logined {
+    position: absolute;
+    margin-top: -55px;
+    margin-left: 30px;
+}
+
+    .header-tooblar__identity--logined span {
+        color: rgb(243, 240, 40);
+    }
+
+.ion-android-people {
+    font-size: 2.5em;
+    text-indent: 10px;
+}
+
+@media all and(max-width:800px) {
+    .header-tooblar__search--tubiao {
+        display: none;
+    }
+}
+
+.div {
+    width: 600px;
+    height: 400px;
+    opacity: 0;
+    border: 1px solid red;
+}
+
+.xiala {
+    width: 100px;
+    height: 200px;
+    border: 1px solid red;
+    /*display: none;*/
+}
+
+.div-father {
+    width: 100px;
+    height: 100px;
+    margin-left: 15%;
+    border: 1px solid lightgray;
+}
+
+.header-tooblar__xiala {
+    width: 100px;
+    margin-left: 15%;
+    opacity: 0;
+    display: none;
+}
+
+    .header-tooblar__xiala ul li {
+        text-align: center;
+        padding: 10px 10px;
+        font-size: 1.3em;
+        background-color: rgb(228, 184, 127);
+        border-bottom: 1px solid white;
+    }
+
+        .header-tooblar__xiala ul li:hover {
+            background-color: rgba(226, 176, 110, 0.582);
+        }

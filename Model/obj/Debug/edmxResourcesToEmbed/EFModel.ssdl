@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChipInfo">
+    <Key>
+      <PropertyRef Name="ChipInfoID" />
+    </Key>
+    <Property Name="ChipInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CinemaID" Type="int" Nullable="false" />
+    <Property Name="OfficeID" Type="int" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="StopTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CinemaInfo">
+    <Key>
+      <PropertyRef Name="CinemaID" />
+    </Key>
+    <Property Name="CinemaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CinemaName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CinemaAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CinemaArea" Type="nvarchar" MaxLength="50" />
+    <Property Name="CinemaImg" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CommentInfo">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieID" Type="int" Nullable="false" />
+    <Property Name="UsersID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserFace" Type="nvarchar" MaxLength="50" />
+    <Property Name="CommentInfo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CommentTime" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovieInfo">
+    <Key>
+      <PropertyRef Name="MovieID" />
+    </Key>
+    <Property Name="MovieID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MovieCover" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MovieBrief" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MovieMoney" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MovieReleaseDate" Type="date" Nullable="false" />
+    <Property Name="MovieDuration" Type="int" Nullable="false" />
+    <Property Name="MovieDirect" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MovieType" Type="nvarchar" MaxLength="50" />
+    <Property Name="MovieArea" Type="nvarchar" MaxLength="50" />
+    <Property Name="MovieYears" Type="int" />
+    <Property Name="MovieScore" Type="decimal" Precision="18" Scale="1" />
+    <Property Name="MoviePeople" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MusicInfo">
+    <Key>
+      <PropertyRef Name="MusicID" />
+    </Key>
+    <Property Name="MusicID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MusicNmae" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MusicLenth" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MusicSinger" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsInfo">
+    <Key>
+      <PropertyRef Name="NewsID" />
+    </Key>
+    <Property Name="NewsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsPoster" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NewsSynopsis" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NewsContent" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="NewsSource" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfficeInfo">
+    <Key>
+      <PropertyRef Name="OfficeID" />
+    </Key>
+    <Property Name="OfficeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OfficeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CinemaID" Type="int" Nullable="false" />
+    <Property Name="NullColOne" Type="int" />
+    <Property Name="NullColTwo" Type="int" />
+    <Property Name="OfficeCount" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Cinema.dbo.OrderDetails”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="SeatID" />
+      <PropertyRef Name="OrderDetailsPrice" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="StopTime" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="SeatID" Type="int" Nullable="false" />
+    <Property Name="OrderDetailsPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="StopTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderInfo">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderSumMoney" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UsersID" Type="int" Nullable="false" />
+    <Property Name="OrderTime" Type="datetime" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CinemaAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OfficeID" Type="int" Nullable="false" />
+    <Property Name="ChipInfoID" Type="int" Nullable="false" />
+    <Property Name="IsPay" Type="int" Nullable="false" />
+    <Property Name="PayTime" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Cinema.dbo.OrdersGoodsInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="OrdersGoodsInfo">
+    <Key>
+      <PropertyRef Name="CinemaID" />
+      <PropertyRef Name="OfficeID" />
+      <PropertyRef Name="MovieName" />
+      <PropertyRef Name="StartTime" />
+      <PropertyRef Name="StopTime" />
+    </Key>
+    <Property Name="CinemaID" Type="int" Nullable="false" />
+    <Property Name="OfficeID" Type="int" Nullable="false" />
+    <Property Name="MovieName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="StopTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SeatInfo">
+    <Key>
+      <PropertyRef Name="SeatID" />
+    </Key>
+    <Property Name="SeatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OfficeID" Type="int" Nullable="false" />
+    <Property Name="IsSeat" Type="int" Nullable="false" />
+    <Property Name="ChipInfoID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“Cinema.dbo.UrlCountInnfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+  <EntityType Name="UrlCountInnfo">
+    <Key>
+      <PropertyRef Name="Msg" />
+    </Key>
+    <Property Name="Msg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsersInfo">
+    <Key>
+      <PropertyRef Name="UsersID" />
+    </Key>
+    <Property Name="UsersID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAccount" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsersPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserSex" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserIDCard" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserLevelNum" Type="int" />
+    <Property Name="UserMvp" Type="int" />
+    <Property Name="UserFace" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserEmail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Chip__CinemaID__3B40CD36">
+    <End Role="CinemaInfo" Type="Self.CinemaInfo" Multiplicity="1" />
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaInfo">
+        <PropertyRef Name="CinemaID" />
+      </Principal>
+      <Dependent Role="ChipInfo">
+        <PropertyRef Name="CinemaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chip__OfficeID__3C34F16F">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="ChipInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OfficeInf__Cinem__5441852A">
+    <End Role="CinemaInfo" Type="Self.CinemaInfo" Multiplicity="1" />
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaInfo">
+        <PropertyRef Name="CinemaID" />
+      </Principal>
+      <Dependent Role="OfficeInfo">
+        <PropertyRef Name="CinemaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__Order__5535A963">
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderInfo">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderDeta__SeatI__5629CD9C">
+    <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="1" />
+    <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SeatInfo">
+        <PropertyRef Name="SeatID" />
+      </Principal>
+      <Dependent Role="OrderDetails">
+        <PropertyRef Name="SeatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK__OrderInfo__Cinem__571DF1D5”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK__OrderInfo__Cinem__571DF1D5" />-->
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK__OrderInfo__Movie__00200768”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK__OrderInfo__Movie__00200768" />-->
+  <Association Name="FK__OrderInfo__Offic__59063A47">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrderInfo__Users__7F2BE32F">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrdersGoo__Cinem__5AEE82B9">
+    <End Role="CinemaInfo" Type="Self.CinemaInfo" Multiplicity="1" />
+    <End Role="OrdersGoodsInfo" Type="Self.OrdersGoodsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CinemaInfo">
+        <PropertyRef Name="CinemaID" />
+      </Principal>
+      <Dependent Role="OrdersGoodsInfo">
+        <PropertyRef Name="CinemaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--生成过程中发现错误:
+警告 6035: 关系“FK__OrdersGoo__Movie__7C4F7684”在关系主端上有一些列不属于表的键的一部分。已排除了此关系。
+        <Association Name="FK__OrdersGoo__Movie__7C4F7684" />-->
+  <Association Name="FK__OrdersGoo__Offic__5CD6CB2B">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="OrdersGoodsInfo" Type="Self.OrdersGoodsInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="OrdersGoodsInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SeatInfo__Office__5DCAEF64">
+    <End Role="OfficeInfo" Type="Self.OfficeInfo" Multiplicity="1" />
+    <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OfficeInfo">
+        <PropertyRef Name="OfficeID" />
+      </Principal>
+      <Dependent Role="SeatInfo">
+        <PropertyRef Name="OfficeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_UsersInfo">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+    <End Role="CommentInfo" Type="Self.CommentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="CommentInfo">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CommentInfo_MovieInfo">
+    <End Role="MovieInfo" Type="Self.MovieInfo" Multiplicity="1" />
+    <End Role="CommentInfo" Type="Self.CommentInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MovieInfo">
+        <PropertyRef Name="MovieID" />
+      </Principal>
+      <Dependent Role="CommentInfo">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderInfo_ChipInfo">
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="1" />
+    <End Role="OrderInfo" Type="Self.OrderInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChipInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Principal>
+      <Dependent Role="OrderInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SeatInfo_ChipInfo">
+    <End Role="ChipInfo" Type="Self.ChipInfo" Multiplicity="1" />
+    <End Role="SeatInfo" Type="Self.SeatInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChipInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Principal>
+      <Dependent Role="SeatInfo">
+        <PropertyRef Name="ChipInfoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsersInfo_UsersInfo">
+    <End Role="UsersInfo" Type="Self.UsersInfo" Multiplicity="1" />
+    <End Role="UsersInfo1" Type="Self.UsersInfo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UsersInfo">
+        <PropertyRef Name="UsersID" />
+      </Principal>
+      <Dependent Role="UsersInfo1">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemaModelStoreContainer">
+    <EntitySet Name="ChipInfo" EntityType="Self.ChipInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CinemaInfo" EntityType="Self.CinemaInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentInfo" EntityType="Self.CommentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovieInfo" EntityType="Self.MovieInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MusicInfo" EntityType="Self.MusicInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsInfo" EntityType="Self.NewsInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OfficeInfo" EntityType="Self.OfficeInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SeatInfo" EntityType="Self.SeatInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsersInfo" EntityType="Self.UsersInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OrderDetails].[OrderID] AS [OrderID], 
+    [OrderDetails].[SeatID] AS [SeatID], 
+    [OrderDetails].[OrderDetailsPrice] AS [OrderDetailsPrice], 
+    [OrderDetails].[StartTime] AS [StartTime], 
+    [OrderDetails].[StopTime] AS [StopTime]
+    FROM [dbo].[OrderDetails] AS [OrderDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OrdersGoodsInfo" EntityType="Self.OrdersGoodsInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OrdersGoodsInfo].[CinemaID] AS [CinemaID], 
+    [OrdersGoodsInfo].[OfficeID] AS [OfficeID], 
+    [OrdersGoodsInfo].[MovieName] AS [MovieName], 
+    [OrdersGoodsInfo].[StartTime] AS [StartTime], 
+    [OrdersGoodsInfo].[StopTime] AS [StopTime]
+    FROM [dbo].[OrdersGoodsInfo] AS [OrdersGoodsInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UrlCountInnfo" EntityType="Self.UrlCountInnfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UrlCountInnfo].[Msg] AS [Msg]
+    FROM [dbo].[UrlCountInnfo] AS [UrlCountInnfo]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Chip__CinemaID__3B40CD36" Association="Self.FK__Chip__CinemaID__3B40CD36">
+      <End Role="CinemaInfo" EntitySet="CinemaInfo" />
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chip__OfficeID__3C34F16F" Association="Self.FK__Chip__OfficeID__3C34F16F">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OfficeInf__Cinem__5441852A" Association="Self.FK__OfficeInf__Cinem__5441852A">
+      <End Role="CinemaInfo" EntitySet="CinemaInfo" />
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__Order__5535A963" Association="Self.FK__OrderDeta__Order__5535A963">
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderDeta__SeatI__5629CD9C" Association="Self.FK__OrderDeta__SeatI__5629CD9C">
+      <End Role="SeatInfo" EntitySet="SeatInfo" />
+      <End Role="OrderDetails" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderInfo__Offic__59063A47" Association="Self.FK__OrderInfo__Offic__59063A47">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrderInfo__Users__7F2BE32F" Association="Self.FK__OrderInfo__Users__7F2BE32F">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrdersGoo__Cinem__5AEE82B9" Association="Self.FK__OrdersGoo__Cinem__5AEE82B9">
+      <End Role="CinemaInfo" EntitySet="CinemaInfo" />
+      <End Role="OrdersGoodsInfo" EntitySet="OrdersGoodsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrdersGoo__Offic__5CD6CB2B" Association="Self.FK__OrdersGoo__Offic__5CD6CB2B">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="OrdersGoodsInfo" EntitySet="OrdersGoodsInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SeatInfo__Office__5DCAEF64" Association="Self.FK__SeatInfo__Office__5DCAEF64">
+      <End Role="OfficeInfo" EntitySet="OfficeInfo" />
+      <End Role="SeatInfo" EntitySet="SeatInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_UsersInfo" Association="Self.FK_Comment_UsersInfo">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="CommentInfo" EntitySet="CommentInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CommentInfo_MovieInfo" Association="Self.FK_CommentInfo_MovieInfo">
+      <End Role="MovieInfo" EntitySet="MovieInfo" />
+      <End Role="CommentInfo" EntitySet="CommentInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderInfo_ChipInfo" Association="Self.FK_OrderInfo_ChipInfo">
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+      <End Role="OrderInfo" EntitySet="OrderInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SeatInfo_ChipInfo" Association="Self.FK_SeatInfo_ChipInfo">
+      <End Role="ChipInfo" EntitySet="ChipInfo" />
+      <End Role="SeatInfo" EntitySet="SeatInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsersInfo_UsersInfo" Association="Self.FK_UsersInfo_UsersInfo">
+      <End Role="UsersInfo" EntitySet="UsersInfo" />
+      <End Role="UsersInfo1" EntitySet="UsersInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

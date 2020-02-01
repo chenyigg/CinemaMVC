@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@*@ViewBag.Title -*@ 灵犀影院，你的不二之选！</title>
+    <link rel="stylesheet" href="~/Content/reset.css" />
+    <link rel="stylesheet" href="~/Content/layout.css" />
+    <link rel="stylesheet" href="~/Content/ionicons.css" />
+    <link rel="stylesheet" href="~/Content/ionicons.min.css" />
+    <link rel="stylesheet" href="~/Content/TopSiteCss/header.css">
+    <link rel="stylesheet" href="~/Content/TopSiteCss/footer.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/TopSiteJs/TopSite.js"></script>
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header id="header" class="row">
+            <div class="header-logo col-2">
+                <img src="~/images/Logo/logo.jpg" alt="">
+            </div>
+            <div class="header-nav col-7">
+                <div>
+                    <ul class="row">
+                        <li class="header-nav__item col-2">
+                            <a href="#" class="header-nav__link header-nav__link--div">
+                                <span class="header-nav__item-tubiao ion-android-pin"></span>
+                                <span class="header-nav__item-text">长沙</span>
+                            </a>
+                        </li>
+                        <li class="header-nav__item col-2">
+                            <a href="/Home/Default" class="header-nav__link">
+                                <span class="header-nav__item-tubiao ion-android-home"></span>
+                                <span class="header-nav__item-text">首页</span>
+                            </a>
+                        </li>
+                        <li class="header-nav__item col-2">
+                            <a href="#" class="header-nav__link">
+                                <span class="header-nav__item-tubiao ion-android-restaurant"></span>
+                                <span class="header-nav__item-text">影院</span>
+                            </a>
+                        </li>
+                        <li class="header-nav__item col-2">
+                            <a href="#" class="header-nav__link">
+                                <span class="header-nav__item-tubiao ion-android-film"></span>
+                                <span class="header-nav__item-text">电影</span>
+                            </a>
+                        </li>
+                        <li class="header-nav__item col-2">
+                            <a href="#" class="header-nav__link">
+                                <span class="header-nav__item-tubiao ion-android-list"></span>
+                                <span class="header-nav__item-text">榜单</span>
+                            </a>
+                        </li>
+                        <li class="header-nav__item col-2">
+                            <a href="#" class="header-nav__link">
+                                <span class="header-nav__item-tubiao ion-fireball"></span>
+                                <span class="header-nav__item-text">热点</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-tooblar col-3">
+                <div class="row">
+                    <div class="header-tooblar__search col-8">
+                        <input type="text" id="searchM" value="找影视剧、影院、导演" class="header-tooblar__search--text">
+                        <div class="header-tooblar__search--tubiao">
+                            <span class="ion-android-search"></span>
+                        </div>
+                    </div>
+                    <div class="header-tooblar__identity col-4">
+                        <div class="div-father">
+                            <div class="header-tooblar__identity--login identity">
+                                <img id="imgFace" style="width: 53px; height: 53px; border: 1px solid black; border-radius: 50px; margin-top: -3px; box-shadow: 0 0 2px 2px gray">
+                            </div>
+                        </div>
+                        <div class="header-tooblar__xiala">
+                            <ul>
+                                <li><a href="OrderDetails.aspx">订单</a></li>
+                                <li><a href="ChangePwd.aspx">修改密码</a></li>
+                                <li><a href="Login.aspx?session=clear">退出</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div>
+            @RenderBody()
+        </div>
+        <footer id="footer" class="row">
+            <div class="col-4"></div>
+            <ul class="footer-content col-4">
+                <li class="footer-content__item">
+                    <a href="">关于我们&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                    <a href="">联系电话&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                    <a href="">平台协议&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                    <a href="">客户服务&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+                    <a href="">工作机会</a>
+                </li>
+                <li class="footer-content__item"><a href="">联系电话：15873018218&nbsp;&nbsp;/&nbsp;&nbsp;17707404697</a></li>
+                <li class="footer-content__item">
+                    <a href="">电子邮箱：1685696678@qq.com&nbsp;&nbsp;/&nbsp;&nbsp;tousujubao@qq.com</a>
+                </li>
+                <li class="footer-content__item"><a href="">版权所有，侵权致歉！</a></li>
+            </ul>
+            <div class="col-4"></div>
+        </footer>
+    </form>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

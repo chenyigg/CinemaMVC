@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cfd09924fdbd459ebe58f9640e404479" Name="Diagram1">
+        <EntityTypeShape EntityType="CinemaModel.ChipInfo" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.CinemaInfo" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.CommentInfo" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.MovieInfo" Width="1.5" PointX="2.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.MusicInfo" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.NewsInfo" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.OfficeInfo" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.OrderInfo" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.SeatInfo" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.UsersInfo" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.OrderDetails" Width="1.5" PointX="12.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.OrdersGoodsInfo" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CinemaModel.UrlCountInnfo" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CinemaModel.FK__Chip__CinemaID__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__Chip__OfficeID__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK_OrderInfo_ChipInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK_SeatInfo_ChipInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OfficeInf__Cinem__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OrdersGoo__Cinem__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK_Comment_UsersInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK_CommentInfo_MovieInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OrderInfo__Offic__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OrdersGoo__Offic__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__SeatInfo__Office__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OrderDeta__Order__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OrderInfo__Users__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK__OrderDeta__SeatI__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaModel.FK_UsersInfo_UsersInfo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

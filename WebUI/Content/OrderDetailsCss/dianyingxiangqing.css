@@ -1,0 +1,130 @@
+#content {
+    width: 80%;
+    margin: 0px auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content--left {
+    margin-top: 130px;
+    text-align: center;
+    border: 1px solid rgba(211, 211, 211, 0.226);
+    background-color: rgba(211, 211, 211, 0.226);
+}
+
+.content--left__div {
+    height: 150px;
+    line-height: 150px;
+    font-size: 2.5em;
+    color: #282828;
+}
+
+.content--left ul li {
+    padding: 10px 0px;
+    font-size: 1.8em;
+}
+
+.content--left--active {
+    color: white;
+    background-color: rgb(238, 40, 40);
+}
+
+.content--right {
+    margin-top: 130px;
+    height: 1000px;
+    border: 1px solid rgba(220, 220, 220, 0.726);
+}
+
+.content--right__top {
+    margin-left: 30px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 2em;
+    color: rgb(212, 29, 29);
+    border-bottom: 1px solid lightgray;
+}
+
+.content--right__bottom {
+    margin-left: 30px;
+}
+
+.content--right__bottom--item {
+    margin-top: 25px;
+    width: 95%;
+    border: 1px solid lightgray;
+}
+
+.content--right__bottom--item__top {
+    font-size: 1.3em;
+    padding: 15px 0px;
+    margin: 1px;
+    background-color: rgba(211, 211, 211, 0.226);
+}
+
+.ion-android-home {
+    color: gray;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.content--right__bottom--item__bottom {
+    padding: 20px;
+}
+
+.content--right__bottom--item__bottom--dl img {
+    width: 90px;
+    height: 130px;
+    border: 3px solid white;
+    box-shadow: 5px 9px 5px -2px lightgray;
+}
+
+.content--right__bottom--item__bottom--dl dt {
+    float: left;
+}
+
+.content--right__bottom--item__bottom--dl dd {
+    padding: 2px 0px;
+    margin-left: 15%;
+}
+
+    .content--right__bottom--item__bottom--dl dd:nth-child(2) {
+        font-size: 1.4em;
+        padding-top: 20px;
+    }
+
+    .content--right__bottom--item__bottom--dl dd:nth-child(3),
+    .content--right__bottom--item__bottom--dl dd:nth-child(4) {
+        color: gray;
+    }
+
+    .content--right__bottom--item__bottom--dl dd:nth-child(5) {
+        color: rgb(212, 29, 29);
+    }
+
+.content--right__bottom--item__bottom-div {
+    font-size: 1.3em;
+    padding-top: 55px;
+}
+
+.fukuan--span {
+    display: block;
+    color: white;
+    margin-top: 2.5em;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgb(212, 29, 29);
+    box-shadow: 0px 2px 3px 2px rgb(228, 164, 164);
+}
+
+    .fukuan--span:hover {
+        background-color: rgb(221, 180, 180);
+    }
+
+    .fukuan--span a:hover {
+        color: black;
+    }
+
+.fukuan--a {
+    padding-top: 10px;
+}

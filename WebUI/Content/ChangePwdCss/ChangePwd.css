@@ -1,0 +1,61 @@
+﻿body {
+    background: linear-gradient(to top,#fff1eb 0%,#ace0f9 100%);
+    padding-top: 10%;
+}
+
+html {
+    height: 100%;
+}
+
+#forgetPwd_Body {
+    width: 400px;
+    height: 520px;
+    background: linear-gradient(-180deg,#67c5d8 0%,#a3c4f6 50%,#5dc3d8 100%);
+    margin: 0px auto;
+    margin-top: 20px;
+    padding-top: 70px;
+    border-radius: 25px;
+}
+
+.forgetPwd_Body_header {
+    margin-left: 10%;
+    font-size: 30px;
+    color: black;
+    width: 80%;
+    border-bottom: 1px solid gray;
+}
+
+.forgetPwd_Body_input {
+    margin-top: 20px;
+}
+
+.form-control {
+    display: block;
+    width: 80%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    height: 50px;
+    border-radius: 0;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+.form-btn {
+    display: block;
+    width: 80%;
+    height: 50px;
+    border-radius: 0;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0px auto;
+    margin-top: 10px;
+}
