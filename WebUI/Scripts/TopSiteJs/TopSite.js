@@ -52,7 +52,7 @@
         console.log($(this).get(0));
         var $src = $(this).html();
         if ($src == "电影") {
-            $src = "File.aspx";
+            $src = "/AllMovie/MovieInfo";
         } else if ($src == "热点") {
             $src = "HotPoint.aspx";
         }

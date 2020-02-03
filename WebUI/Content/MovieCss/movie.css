@@ -201,6 +201,14 @@ a:focus {
     position: relative;
 }
 
+.header-nav__item a {
+    color: black;
+}
+
+.footer-content__item a {
+    color: white;
+}
+
 @media only screen and (max-width: 479px) {
     .tab .nav-tabs {
         border: none;
