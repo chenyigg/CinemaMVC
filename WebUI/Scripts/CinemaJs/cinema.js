@@ -14,12 +14,6 @@ $(function () {
                 CinemaAddress: "",
                 CinemaArea: ""
             }],
-            Office: [{
-                OfficeID: "",
-                OfficeName: "",
-                CinemaID: ""
-            }]
-            ,
             Cinema: [{
                 CinemaID: "",
                 CinemaName: "",
@@ -33,10 +27,10 @@ $(function () {
         methods: {
             //加载
             LoadInfo() {
-                $.post("Cinema.aspx?Method=FindOfficeName", function (data) {
+                $.post("/Cinema/FindOfficeName", function (data) {
                     vm.ListOffice = data;
                 }, "json")
-                $.post("Cinema.aspx?Method=FindCinema", function (data) {
+                $.post("/Cinema/FindCinema", function (data) {
                     vm.ListCinema = data;
                     vm.Cinema = data;
                 }, "json")
@@ -46,11 +40,12 @@ $(function () {
                 $('.content--select__district ul li').removeClass("content--select__district--active");
                 var AreaChange = event.currentTarget;
                 $(AreaChange).addClass("content--select__district--active");
-                $.post("Cinema.aspx?Method=Filtrate", {
+                $.post("/Cinema/Filtrate", {
                     CinemaArea: $(AreaChange).children("span").text(),
                     OfficeName: $('.content--select__special--active').children("span").text()
                 },
                     function (data) {
+                        console.log(data);
                         vm.Cinema = data;
                     },
                     "json"
@@ -61,14 +56,10 @@ $(function () {
                 $('.content--select__special ul li').removeClass("content--select__special--active");
                 var TypeChange = event.currentTarget;
                 $(TypeChange).addClass("content--select__special--active");
-                $.post("Cinema.aspx?Method=Filtrate", {
+                $.post("/Cinema/Filtrate", {
                     CinemaArea: $('.content--select__district--active').children("span").text(),
-                    officeName: $(TypeChange).children("span").text()
-                },
-                    function (data) {
-                        vm.Cinema = data;
-                    },
-                    "json"
+                    OfficeName: $(TypeChange).children("span").text()
+                }, function (data) { vm.Cinema = data; }, "json"
                 )
             }
         }

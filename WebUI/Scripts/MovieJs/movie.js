@@ -148,9 +148,11 @@ $(function () {
                     }
                 })
             },
+            //正在热映
             zjry() {
                 this.loadMovieInfo();
             },
+            //即将上映
             jjsy() {
                 $.ajax({
                     url: "/AllMovie/jjsy",
@@ -161,6 +163,7 @@ $(function () {
                     }
                 })
             },
+            //经典电影
             jddy() {
                 $.ajax({
                     url: "/AllMovie/jddy",

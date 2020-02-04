@@ -49,10 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDAL.cs" />
+    <Compile Include="CinemaInfoDAL.cs" />
     <Compile Include="CommentInfoDAL.cs" />
     <Compile Include="EFFactory.cs" />
     <Compile Include="IBaseDAL.cs" />
     <Compile Include="MovieInfoDAL.cs" />
+    <Compile Include="OfficeInfoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersInfoDAL.cs" />
   </ItemGroup>

@@ -60,7 +60,7 @@
             $src = "/Home/Default";
         }
         else if ($src == "影院") {
-            $src = "Cinema.aspx";
+            $src = "/Cinema/AllCinema";
         }
         else if ($src == "榜单") {
             $src = "List.aspx";
