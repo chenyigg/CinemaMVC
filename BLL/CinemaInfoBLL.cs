@@ -22,5 +22,10 @@ namespace BLL
             }
             return new CinemaInfoDAL().Filtrate(CinemaArea, OfficeName);
         }
+
+        public dynamic ChooseCinemaInfo(MovieInfo model)
+        {
+            return new CinemaInfoDAL().ChooseCinemaInfo(model);
+        }
     }
 }

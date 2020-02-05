@@ -39,7 +39,7 @@
                         <a href=""><span class="ion-ios-heart"></span>&nbsp;&nbsp;想看</a>
                         <a href=""><span class="ion-android-star"></span>&nbsp;&nbsp;评分</a>
                     </dd>
-                    <dd class="content--top__content--item1__dl--buy"><a href="ChooseCinema.aspx?MovieID=<%=mz.MovieID %>">特票优惠</a></dd>
+                    <dd class="content--top__content--item1__dl--buy"><a href="@Url.Action("CinemaLoad","ChooseCinema",new { MovieID=Model.ToList()[0].MovieID})">特票优惠</a></dd>
                 </dl>
             </div>
             <div class="content--top__content--item2 col-5">

@@ -66,7 +66,7 @@
             $src = "List.aspx";
         }
         else if ($src == "长沙") {
-            $src = "Default.aspx";
+            $src = "/Home/Default";
         }
         location.href = $src;
     })

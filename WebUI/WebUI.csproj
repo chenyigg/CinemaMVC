@@ -345,6 +345,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AllMovieController.cs" />
+    <Compile Include="Controllers\ChooseCinemaController.cs" />
     <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -374,6 +375,7 @@
     <Content Include="Views\Details\MovieDetails.cshtml" />
     <Content Include="Views\AllMovie\MovieInfo.cshtml" />
     <Content Include="Views\Cinema\AllCinema.cshtml" />
+    <Content Include="Views\ChooseCinema\CinemaLoad.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

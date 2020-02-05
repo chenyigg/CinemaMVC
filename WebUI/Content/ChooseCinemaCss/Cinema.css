@@ -194,3 +194,7 @@
         .content--address--cinemalist__item--right span:nth-child(2) a:hover {
             color: white;
         }
+
+[v-cloak] {
+    display: none
+}

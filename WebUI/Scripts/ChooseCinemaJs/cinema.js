@@ -1,4 +1,36 @@
 $(function () {
+    var date = new Date();
+    var M1 = date.getMonth() + 1;
+    var D1 = date.getDate();
+    var K1 = false;
+    (function () {
+        if (M1 == '1', '3', '5', '7', '8', '10', '12') {
+            if (D1 == 31) {
+                K1 = true;
+            }
+        }
+        else if (M1 == '2') {
+            if (D1 == 28) {
+                K1 = true;
+            }
+        } else {
+            if (D1 == 30) {
+                K1 = true;
+            }
+        }
+    })();
+
+    var vm = new Vue({
+        el: '#content',
+        data: {
+            //放置月、日
+            Month: M1,
+            Day: D1,
+
+            //判断年月增长,保证不溢出
+            K2: K1
+        }
+    })
     $('.header-nav__link--div').mouseover(function () {
         $('.div').css({
             "opacity": "1",
