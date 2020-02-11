@@ -20,6 +20,10 @@ namespace WebUI.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 通过电影ID选择电影院
+        /// </summary>
+        /// <param name="movieID"></param>
         public void ChooseCinemaInfo(int movieID)
         {
             var MovieID = Convert.ToInt32(movieID);
@@ -30,6 +34,10 @@ namespace WebUI.Controllers
             //List<CinemaInfo> ls = new CinemaInfoBLL().ChooseCinemaInfo(model).ca;
         }
 
+        /// <summary>
+        /// 通过电影ID查询电影信息
+        /// </summary>
+        /// <param name="MovieID"></param>
         public void SelectMovieInfo(int MovieID)
         {
             MovieInfo mi = new MovieInfo();

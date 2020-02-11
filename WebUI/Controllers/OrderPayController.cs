@@ -34,16 +34,29 @@ namespace WebUI.Controllers
             return View(or);
         }
 
+        /// <summary>
+        /// 打开二维码支付界面，进行跳转
+        /// </summary>
+        /// <returns></returns>
         public ActionResult UrlAbout()
         {
             return View();
         }
 
+        /// <summary>
+        /// 订单界面加载
+        /// </summary>
+        /// <param name="OrderID"></param>
+        /// <returns></returns>
         public dynamic LoadInfo(int OrderID)
         {
             return new OrderInfoBLL().LoadInfo(OrderID);
         }
 
+        /// <summary>
+        /// 客户端发起轮询，判断是否已付款
+        /// </summary>
+        /// <returns></returns>
         public ActionResult IsPay()
         {
             int x = Convert.ToInt32(Request["OI"]);
