@@ -45,6 +45,8 @@
                         data: { CommentInfo1: $('#txtSee').val(), CommentTime: str, MovieID: $('#imgone').attr("title") },
                         dataType: "json",
                         success: function (datainfo) {
+                            if (datainfo.status) {
+                            }
                             if (datainfo.state == "false") {
                                 alert('插入失败');
                                 $('#txtSee').val("");
@@ -55,6 +57,14 @@
                                 vm.$options.methods.getPage();
                                 $('#txtSee').val("");
                             }
+                        },
+                        error: function (xhr, text, errors) {
+                            alert("请先登录！");
+                            setTimeout(
+                                function () {
+                                    window.location.href = "/Login/Check"
+                                }, 1000
+                            )
                         }
                     }
                 )

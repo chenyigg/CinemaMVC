@@ -50,6 +50,7 @@
     <Compile Include="CommentInfoBLL.cs" />
     <Compile Include="IBaseBLL.cs" />
     <Compile Include="MovieInfoBLL.cs" />
+    <Compile Include="NewsInfoBLL.cs" />
     <Compile Include="OfficeInfoBLL.cs" />
     <Compile Include="OrderDetailsBLL.cs" />
     <Compile Include="OrderInfoBLL.cs" />

@@ -55,6 +55,7 @@
     <Compile Include="EFFactory.cs" />
     <Compile Include="IBaseDAL.cs" />
     <Compile Include="MovieInfoDAL.cs" />
+    <Compile Include="NewsInfoDAL.cs" />
     <Compile Include="OfficeInfoDAL.cs" />
     <Compile Include="OrderDetailsDAL.cs" />
     <Compile Include="OrderInfoDAL.cs" />

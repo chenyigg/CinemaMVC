@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "ListLoad";
+}
+
+<link rel="stylesheet" href="~/Content/bootstrap.min.css">
+<link rel="stylesheet" href="~/Content/ListCss/bangdan.css">
+<link rel="stylesheet" href="~/Content/ListCss/menu.css">
+<link rel="stylesheet" href="~/Content/ListCss/htmleaf-demo.css">
+<script src="~/Scripts/ListJs/ListJs.js"></script>
+
+<section id="content" class="row" style="height:3400px">
+    <div class="content--nav">
+        <div class="htmleaf-container">
+            <div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a id="asection1" href="#Section1" aria-controls="home" role="tab" data-toggle="tab">热映口碑榜</a></li>
+                    <li role="presentation"><a id="asection2" href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">最受期待榜</a></li>
+                    <li role="presentation"><a id="asection3" href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">国内票房榜</a></li>
+                    <li role="presentation"><a id="asection4" href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">北美票房榜</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tabs">
+                    <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                        <!-- 内容1 -->
+                        <div class="content--container row">
+                            @{
+                                int index1 = 1;
+                                int index2 = 1;
+                                int index3 = 1;
+                                int index4 = 1;
+                            }
+                            @foreach (var item in ViewBag.MovieInfo1)
+                            {
+                                <div class="content--container__item row">
+                                    <div class="content--container__item--ranking col-1">
+                                        <span style="background-color: orange; color: white">@(index1)</span>
+                                    </div>
+                                    <div class="content--container__item--content col-9">
+                                        <dl class="content--container__item--content__dl">
+                                            <dt>
+                                                <a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">
+                                                    <img src="../images/MovieCover/@item.MovieCover" alt="">
+                                                </a>
+                                            </dt>
+                                            <dd><a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">@item.MovieName</a></dd>
+                                            <dd>主演：@item.MoviePeople</dd>
+                                            <dd>上映时间：@item.MovieReleaseDate.ToString().Substring(0, 10)</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="content--container__item--grade col-2">
+                                        <div><span style="font-size: 2.8em">@item.MovieScore.ToString().Substring(0, 2)</span>@item.MovieScore.ToString().Substring(2, 1)</div>
+                                        <div class="content--container__item--grade__xiangqing">
+                                            dewky4tbiuqnpmrwcn4tyumq;n3c
+                                        </div>
+                                    </div>
+                                </div>
+                                index1++;
+                            }
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section2">
+                        <!-- 内容2 -->
+                        <div class="content--container row">
+                            @foreach (var item in ViewBag.MovieInfo2)
+                            {
+                                <div class="content--container__item row">
+                                    <div class="content--container__item--ranking col-1">
+                                        <span style="background-color: orange; color: white">@(index2)</span>
+                                    </div>
+                                    <div class="content--container__item--content col-9">
+                                        <dl class="content--container__item--content__dl">
+                                            <dt>
+                                                <a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">
+                                                    <img src="../images/MovieCover/@item.MovieCover" alt="">
+                                                </a>
+                                            </dt>
+                                            <dd><a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">@item.MovieName</a></dd>
+                                            <dd>主演：@item.MoviePeople</dd>
+                                            <dd>上映时间：@item.MovieReleaseDate.ToString().Substring(0, 10)</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="content--container__item--grade col-2">
+                                        <div><span style="font-size: 2.8em">@item.MovieScore.ToString().Substring(0, 2)</span>@item.MovieScore.ToString().Substring(2, 1)</div>
+                                        <div class="content--container__item--grade__xiangqing">
+                                            dewky4tbiuqnpmrwcn4tyumq;n3c
+                                        </div>
+                                    </div>
+                                </div>
+                                index2++;
+                            }
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section3">
+                        <!-- 内容3 -->
+                        <div class="content--container row">
+                            @foreach (var item in ViewBag.MovieInfo3)
+                            {
+                                <div class="content--container__item row">
+                                    <div class="content--container__item--ranking col-1">
+                                        <span style="background-color: orange; color: white">@(index3)</span>
+                                    </div>
+                                    <div class="content--container__item--content col-9">
+                                        <dl class="content--container__item--content__dl">
+                                            <dt>
+                                                <a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">
+                                                    <img src="../images/MovieCover/@item.MovieCover" alt="">
+                                                </a>
+                                            </dt>
+                                            <dd><a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">@item.MovieName</a></dd>
+                                            <dd>主演：@item.MoviePeople</dd>
+                                            <dd>上映时间：@item.MovieReleaseDate.ToString().Substring(0, 10)</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="content--container__item--grade col-2">
+                                        <div><span style="font-size: 2.8em">@item.MovieScore.ToString().Substring(0, 2)</span>@item.MovieScore.ToString().Substring(2, 1)</div>
+                                        <div class="content--container__item--grade__xiangqing">
+                                            dewky4tbiuqnpmrwcn4tyumq;n3c
+                                        </div>
+                                    </div>
+                                </div>
+                                index3++;
+                            }
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section4">
+                        <!-- 内容4 -->
+                        <div class="content--container row">
+                            @foreach (var item in ViewBag.MovieInfo4)
+                            {
+                                <div class="content--container__item row">
+                                    <div class="content--container__item--ranking col-1">
+                                        <span style="background-color: orange; color: white">@(index4)</span>
+                                    </div>
+                                    <div class="content--container__item--content col-9">
+                                        <dl class="content--container__item--content__dl">
+                                            <dt>
+                                                <a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">
+                                                    <img src="../images/MovieCover/@item.MovieCover" alt="">
+                                                </a>
+                                            </dt>
+                                            <dd><a href="@Url.Action("MovieDetails","Details",new { MovieID =item.MovieID})">@item.MovieName</a></dd>
+                                            <dd>主演：@item.MoviePeople</dd>
+                                            <dd>上映时间：@item.MovieReleaseDate.ToString().Substring(0, 10)</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="content--container__item--grade col-2">
+                                        <div><span style="font-size: 2.8em">@item.MovieScore.ToString().Substring(0, 2)</span>@item.MovieScore.ToString().Substring(2, 1)</div>
+                                        <div class="content--container__item--grade__xiangqing">
+                                            dewky4tbiuqnpmrwcn4tyumq;n3c
+                                        </div>
+                                    </div>
+                                </div>
+                                index4++;
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

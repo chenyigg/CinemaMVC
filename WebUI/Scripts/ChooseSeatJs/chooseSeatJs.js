@@ -49,8 +49,13 @@ var vm = new Vue({
                         window.location.href = "/OrderPay/PayLoad?OrderID=" + String(data.OrderID);
                     }, 1000)
                 },
-                Error: function () {
-                    alert("购买失败!");
+                error: function (xhr, text, errors) {
+                    alert("请先登录！");
+                    setTimeout(
+                        function () {
+                            window.location.href = "/Login/Check"
+                        }, 1000
+                    )
                 }
             })
         },

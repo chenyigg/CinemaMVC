@@ -451,6 +451,7 @@
     <Content Include="Scripts\UserJs\Regex.js" />
     <Content Include="Scripts\vue.js" />
     <Content Include="Scripts\vue.min.js" />
+    <Content Include="video\初音.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -462,7 +463,10 @@
     <Compile Include="Controllers\CinemaController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotPointController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MyFilterAttr.cs" />
     <Compile Include="Controllers\OrderPayController.cs" />
     <Compile Include="Controllers\UrlController.cs" />
     <Compile Include="Global.asax.cs">
@@ -496,6 +500,8 @@
     <Content Include="Views\OrderPay\PayLoad.cshtml" />
     <Content Include="Views\OrderPay\UrlAbout.cshtml" />
     <Content Include="Views\Url\Index.cshtml" />
+    <Content Include="Views\HotPoint\PointLoad.cshtml" />
+    <Content Include="Views\List\ListLoad.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

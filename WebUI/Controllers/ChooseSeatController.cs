@@ -74,6 +74,7 @@ namespace WebUI.Controllers
             return Json(cm, JsonRequestBehavior.AllowGet);
         }
 
+        [MyFilterAttr]
         /// <summary>
         /// 确认选座
         /// </summary>

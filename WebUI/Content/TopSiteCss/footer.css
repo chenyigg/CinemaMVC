@@ -13,6 +13,14 @@
     color: white;
 }
 
+    .footer-content a {
+        color: white;
+    }
+
+        .footer-content a:hover {
+            color: Red;
+        }
+
 .footer-content__item {
     line-height: 30px;
     text-align: center;

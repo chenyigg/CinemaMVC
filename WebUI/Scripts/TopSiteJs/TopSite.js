@@ -63,10 +63,10 @@
             $src = "/Cinema/AllCinema";
         }
         else if ($src == "榜单") {
-            $src = "List.aspx";
+            $src = "/List/ListLoad";
         }
         else if ($src == "长沙") {
-            $src = "/Home/Default";
+            $src = "/HotPoint/PointLoad";
         }
         location.href = $src;
     })

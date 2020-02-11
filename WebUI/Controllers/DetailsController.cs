@@ -77,6 +77,7 @@ namespace WebUI.Controllers
             return JsonConvert.SerializeObject(ls);
         }
 
+        [MyFilterAttr]
         /// <summary>
         /// 发表评论
         /// </summary>
@@ -128,6 +129,9 @@ namespace WebUI.Controllers
                         lists[j].UserFace = "无头像.png";
                     }
                 }
+
+                pageCount = (count % pageSize) > 0 ? (count / pageSize) + 1 : count / pageSize;
+                pageNow = lists.Count > 0 ? 1 : 0;
 
                 return JsonConvert.SerializeObject(lists);
             }
